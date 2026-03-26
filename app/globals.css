@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
+/* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand greens */
+  --brand:           #20a64c;
+  --brand-bright:    #28f06a;
+  --brand-mint:      #bef4cf;
+  --brand-light-bg:  #eaf2ec;
+  --brand-header-bg: #f4f8f5;
+  --brand-tag-bg:    rgba(32, 166, 76, 0.1);
+  --brand-tag-bg-30: rgba(32, 166, 76, 0.3);
+
+  /* Grays (Figma design system) */
+  --gray-50:   #f6f6f6;
+  --gray-100:  #e7e7e7;
+  --gray-300:  #b0b0b0;
+  --gray-500:  #6d6d6d;
+  --gray-600:  #5d5d5d;
+  --gray-700:  #4f4f4f;
+  --gray-850:  #2b2b2b;
+  --gray-950:  #101010;
+  --gray-1000: #0b0b0b;
+
+  /* Dark-slide palette */
+  --dark-base:    #060a0f;
+  --dark-surface: #0e1416;
+  --dark-text:    #e6f9ef;
+  --dark-muted:   #9aa6a8;
+
+  /* Semantic — light mode */
+  --background:  #ffffff;
+  --foreground:  var(--gray-950);
+  --surface:     var(--gray-50);
+  --text-body:   var(--gray-700);
+  --text-muted:  var(--gray-500);
+  --border:      var(--gray-100);
 }
 
+/* ─── Dark mode overrides ────────────────────────────────────── */
+.dark {
+  --background: var(--dark-base);
+  --foreground: var(--dark-text);
+  --surface:    #0f1a14;
+  --text-body:  var(--dark-muted);
+  --text-muted: var(--gray-500);
+  --border:     rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Tailwind v4 theme extension ───────────────────────────── */
 @theme inline {
+  /* Semantic surfaces */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface:    var(--surface);
+  --color-border:     var(--border);
+
+  /* Brand palette */
+  --color-brand:           var(--brand);
+  --color-brand-bright:    var(--brand-bright);
+  --color-brand-mint:      var(--brand-mint);
+  --color-brand-light-bg:  var(--brand-light-bg);
+  --color-brand-header-bg: var(--brand-header-bg);
+
+  /* Gray scale (design-system-aligned) */
+  --color-gray-50:   var(--gray-50);
+  --color-gray-100:  var(--gray-100);
+  --color-gray-300:  var(--gray-300);
+  --color-gray-500:  var(--gray-500);
+  --color-gray-600:  var(--gray-600);
+  --color-gray-700:  var(--gray-700);
+  --color-gray-850:  var(--gray-850);
+  --color-gray-950:  var(--gray-950);
+
+  /* Fonts */
+  --font-sans:    var(--font-geist-sans);
+  --font-display: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ─── Base styles ───────────────────────────────────────────── */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+/* ─── Layout utility ────────────────────────────────────────── */
+.section-container {
+  margin-inline: auto;
+  max-width: 1440px;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container { padding-inline: 2.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .section-container { padding-inline: 4rem; }
+}
+
+@media (min-width: 1536px) {
+  .section-container { padding-inline: 0; }
+}
+
+/* ─── Marquee animation ─────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
