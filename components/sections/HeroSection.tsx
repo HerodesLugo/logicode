@@ -2,13 +2,11 @@
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
+import { HERO_SLIDE_1_IMG, HERO_SLIDE_2_IMG, HERO_SLIDE_3_IMG } from "@/lib/assets";
 
-const heroSlideImg =
-  "https://www.figma.com/api/mcp/asset/c7f10715-e4f4-42d2-aa2a-97eaea4cf820";
-const heroSlide2Img =
-  "https://www.figma.com/api/mcp/asset/a5eab4d3-0b76-4d3a-9139-4ac0a7f83a6c";
-const heroSlide3Img =
-  "https://www.figma.com/api/mcp/asset/14db4b93-23b6-49d8-ad2f-9d3459cba698";
+const heroSlideImg = HERO_SLIDE_1_IMG;
+const heroSlide2Img = HERO_SLIDE_2_IMG;
+const heroSlide3Img = HERO_SLIDE_3_IMG;
 
 /* ── Hydration-safe mounted check (avoids setState-in-effect lint) ── */
 const emptySubscribe = () => () => {};

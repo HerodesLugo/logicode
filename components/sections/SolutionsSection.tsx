@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { SOLUTIONS_GARBO_LOGO } from "@/lib/assets";
 
-const garboLogo =
-  "https://www.figma.com/api/mcp/asset/ca7533bc-510a-4857-90d4-1bf2112bc570";
+const garboLogo = SOLUTIONS_GARBO_LOGO;
 
 type Solution = {
   logo: string;

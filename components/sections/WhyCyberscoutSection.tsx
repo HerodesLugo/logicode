@@ -1,11 +1,9 @@
 import { Badge } from "@/components/ui/Badge";
+import { WHY_CARD_IMG_1, WHY_CARD_IMG_2, WHY_CARD_IMG_3 } from "@/lib/assets";
 
-const cardImg1 =
-  "https://www.figma.com/api/mcp/asset/13f8a07b-7a5a-4cf0-9c21-4095d548327a";
-const cardImg2 =
-  "https://www.figma.com/api/mcp/asset/f7ec8790-aeb2-441c-be33-185780a1b0f7";
-const cardImg3 =
-  "https://www.figma.com/api/mcp/asset/646e650c-9845-46cf-aeb7-fabeaa6b7844";
+const cardImg1 = WHY_CARD_IMG_1;
+const cardImg2 = WHY_CARD_IMG_2;
+const cardImg3 = WHY_CARD_IMG_3;
 
 type FeatureCard = {
   image: string;

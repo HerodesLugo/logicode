@@ -9,6 +9,7 @@ import { WhyCyberscoutSection } from "@/components/sections/WhyCyberscoutSection
 import { WorkflowSection } from "@/components/sections/WorkflowSection";
 import { CTABannerSection } from "@/components/sections/CTABannerSection";
 import { UseCasesSection } from "@/components/sections/UseCasesSection";
+import { BackToTop } from "@/components/ui/BackToTop";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <PartnersMarquee />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

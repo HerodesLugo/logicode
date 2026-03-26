@@ -1,5 +1,6 @@
-const globeImg =
-  "https://www.figma.com/api/mcp/asset/9eed95be-4327-4b1e-bd06-7b17ab1838ee";
+import { GLOBE_IMG } from "@/lib/assets";
+
+const globeImg = GLOBE_IMG;
 
 export function GlobalThreatSection() {
   return (

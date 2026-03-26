@@ -1,7 +1,19 @@
+import Image from "next/image";
+import {
+  SERVICE_ICON_DARK_INCIDENTS,
+  SERVICE_ICON_DARK_NOTICES,
+  SERVICE_ICON_DARK_SOLUTIONS,
+  SERVICE_ICON_DARK_REPORTS,
+  SERVICE_ICON_DARK_GUIDES,
+  SERVICE_ICON_DARK_NATIONAL_SOC,
+  SERVICE_ICON_DARK_TRAINING,
+} from "@/lib/assets";
+
 const services = [
   {
     name: "Incidents",
-    icon: (
+    darkIcon: SERVICE_ICON_DARK_INCIDENTS,
+    lightIcon: (
       <svg className="w-[70px] h-[70px] text-brand" viewBox="0 0 70 70" fill="none" strokeWidth="2" stroke="currentColor">
         <path d="M35 15L58 55H12L35 15Z" strokeLinejoin="round" />
         <line x1="35" y1="30" x2="35" y2="42" strokeLinecap="round" />
@@ -11,7 +23,8 @@ const services = [
   },
   {
     name: "Notices\nand Alerts",
-    icon: (
+    darkIcon: SERVICE_ICON_DARK_NOTICES,
+    lightIcon: (
       <svg className="w-[70px] h-[70px] text-brand" viewBox="0 0 70 70" fill="none" strokeWidth="2" stroke="currentColor">
         <rect x="16" y="12" width="38" height="46" rx="4" />
         <circle cx="35" cy="35" r="6" />
@@ -22,7 +35,8 @@ const services = [
   },
   {
     name: "Solutions",
-    icon: (
+    darkIcon: SERVICE_ICON_DARK_SOLUTIONS,
+    lightIcon: (
       <svg className="w-[70px] h-[70px] text-brand" viewBox="0 0 70 70" fill="none" strokeWidth="2" stroke="currentColor">
         <path d="M35 18v8M35 44v8M18 35h8M44 35h8" strokeLinecap="round" />
         <path d="M23 23l6 6M41 41l6 6M47 23l-6 6M29 41l-6 6" strokeLinecap="round" />
@@ -33,7 +47,8 @@ const services = [
   },
   {
     name: "Reports",
-    icon: (
+    darkIcon: SERVICE_ICON_DARK_REPORTS,
+    lightIcon: (
       <svg className="w-[70px] h-[70px] text-brand" viewBox="0 0 70 70" fill="none" strokeWidth="2" stroke="currentColor">
         <path d="M14 18h32l10 10v24a4 4 0 01-4 4H18a4 4 0 01-4-4V18z" />
         <path d="M46 18v10h10" />
@@ -44,7 +59,8 @@ const services = [
   },
   {
     name: "Guides",
-    icon: (
+    darkIcon: SERVICE_ICON_DARK_GUIDES,
+    lightIcon: (
       <svg className="w-[70px] h-[70px] text-brand" viewBox="0 0 70 70" fill="none" strokeWidth="2" stroke="currentColor">
         <rect x="18" y="14" width="34" height="42" rx="3" />
         <line x1="26" y1="26" x2="44" y2="26" strokeLinecap="round" />
@@ -55,7 +71,8 @@ const services = [
   },
   {
     name: "National SOC\nNetwork",
-    icon: (
+    darkIcon: SERVICE_ICON_DARK_NATIONAL_SOC,
+    lightIcon: (
       <svg className="w-[70px] h-[70px] text-brand" viewBox="0 0 70 70" fill="none" strokeWidth="2" stroke="currentColor">
         <circle cx="35" cy="35" r="18" />
         <circle cx="35" cy="35" r="6" />
@@ -66,7 +83,8 @@ const services = [
   },
   {
     name: "Training",
-    icon: (
+    darkIcon: SERVICE_ICON_DARK_TRAINING,
+    lightIcon: (
       <svg className="w-[70px] h-[70px] text-brand" viewBox="0 0 70 70" fill="none" strokeWidth="2" stroke="currentColor">
         <circle cx="35" cy="35" r="18" />
         <circle cx="35" cy="35" r="12" />
@@ -85,9 +103,19 @@ export function ServicesSection() {
           {services.map((svc) => (
             <button
               key={svc.name}
-              className="bg-card-bg rounded-[20px] p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
+              className="bg-card-bg dark:bg-[linear-gradient(221deg,#263f64_8%,#0d1521_92%)] rounded-[20px] p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
             >
-              {svc.icon}
+              {/* Light mode: inline SVG icon */}
+              <span className="dark:hidden">{svc.lightIcon}</span>
+              {/* Dark mode: Figma asset icon */}
+              <Image
+                src={svc.darkIcon}
+                alt={svc.name.replace("\n", " ")}
+                width={70}
+                height={70}
+                unoptimized
+                className="hidden dark:block w-[70px] h-[70px] object-contain"
+              />
               <span className="text-heading text-sm text-center whitespace-pre-line leading-tight">
                 {svc.name}
               </span>

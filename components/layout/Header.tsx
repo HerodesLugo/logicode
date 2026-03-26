@@ -1,9 +1,8 @@
 import Image from "next/image";
+import { HEADER_LOGO_LIGHT, HEADER_LOGO_DARK } from "@/lib/assets";
 
-const logoLightUrl =
-  "https://www.figma.com/api/mcp/asset/76caf464-b509-424d-a095-e1d58b8330ba";
-const logoDarkUrl =
-  "https://www.figma.com/api/mcp/asset/f087081f-cbe1-436b-8bf1-7b6e1f578b29";
+const logoLightUrl = HEADER_LOGO_LIGHT;
+const logoDarkUrl = HEADER_LOGO_DARK;
 
 const navLinks = ["Platform", "Solutions", "Threat Intelligence", "Company"];
 

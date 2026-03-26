@@ -1,5 +1,6 @@
-const bgImage =
-  "https://www.figma.com/api/mcp/asset/fa9cee0b-5c63-45a0-a7c0-d5f79c089e30";
+import { CTA_BG_IMG } from "@/lib/assets";
+
+const bgImage = CTA_BG_IMG;
 
 export function CTABannerSection() {
   return (

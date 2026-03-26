@@ -1,11 +1,21 @@
+import {
+  PARTNER_LOGO_1,
+  PARTNER_LOGO_CSIRT,
+  PARTNER_LOGO_FIRST,
+  PARTNER_LOGO_TF_CSIRT,
+  PARTNER_LOGO_5,
+  PARTNER_LOGO_RED_SOC,
+  PARTNER_LOGO_EGC,
+} from "@/lib/assets";
+
 const partnerLogos = [
-  { src: "https://www.figma.com/api/mcp/asset/098063a2-ef32-47db-9a8c-d165155b2b0e", alt: "Partner 1", width: 82 },
-  { src: "https://www.figma.com/api/mcp/asset/97edece0-056e-4521-8146-ee8118a934a0", alt: "CSIRT.es", width: 82 },
-  { src: "https://www.figma.com/api/mcp/asset/225f37a2-26d5-4652-963a-aab66e98f30d", alt: "FIRST", width: 82 },
-  { src: "https://www.figma.com/api/mcp/asset/87ebd1a3-4f43-42c4-800d-1fb55089dac7", alt: "TF-CSIRT", width: 82 },
-  { src: "https://www.figma.com/api/mcp/asset/baf958c5-5b02-4100-b355-36ad257ce5c4", alt: "Partner 5", width: 82 },
-  { src: "https://www.figma.com/api/mcp/asset/977dba8d-01f3-412b-95b1-511175bdf68b", alt: "Red Nacional de SOC", width: 82 },
-  { src: "https://www.figma.com/api/mcp/asset/ac95b8eb-c797-4934-aa61-d5bece7d40ad", alt: "EGC group", width: 169 },
+  { src: PARTNER_LOGO_1,        alt: "Partner 1",         width: 82  },
+  { src: PARTNER_LOGO_CSIRT,    alt: "CSIRT.es",          width: 82  },
+  { src: PARTNER_LOGO_FIRST,    alt: "FIRST",             width: 82  },
+  { src: PARTNER_LOGO_TF_CSIRT, alt: "TF-CSIRT",         width: 82  },
+  { src: PARTNER_LOGO_5,        alt: "Partner 5",         width: 82  },
+  { src: PARTNER_LOGO_RED_SOC,  alt: "Red Nacional de SOC", width: 82 },
+  { src: PARTNER_LOGO_EGC,      alt: "EGC group",         width: 169 },
 ];
 
 export function PartnersMarquee() {
