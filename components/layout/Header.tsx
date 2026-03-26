@@ -96,10 +96,10 @@ export function Header() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="flex md:hidden items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-[#0a1a12] border border-gray-200 dark:border-[#162e22] hover:opacity-80 transition-colors ml-auto shrink-0"
+              className="flex md:hidden items-center justify-center w-12 h-12 rounded-full bg-[rgba(40,_240,_106,_0.08)] dark:bg-[#0a1a12]  dark:border-[#162e22] hover:opacity-80 transition-colors ml-auto shrink-0"
               aria-label="Open menu"
             >
-              <svg className="w-5 h-5 text-gray-900 dark:text-white" viewBox="0 0 24 24" fill="none">
+              <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
                 <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </button>

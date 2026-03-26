@@ -138,7 +138,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-[540px] md:h-[620px] lg:h-[691px] overflow-hidden transition-colors duration-700"
+      className="relative w-full h-dvh md:h-[620px] lg:h-[691px] overflow-hidden transition-colors duration-700"
       style={{ backgroundColor: c.bg }}
     >
       {/* ── Background image (right half) ──────────────────── */}
