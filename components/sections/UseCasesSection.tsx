@@ -52,8 +52,8 @@ export function UseCasesSection() {
       <div className="section-container flex flex-col gap-10">
         {/* ── Section header ──────────────────────────────── */}
         <div className="flex flex-col gap-4">
-          <span className="text-brand text-sm font-medium">Use cases</span>
-          <h2 className="text-gray-950 text-3xl lg:text-[32px] font-bold leading-tight max-w-[760px]">
+          <span className="text-accent text-sm font-medium">Use cases</span>
+          <h2 className="text-heading text-3xl lg:text-[32px] font-bold leading-tight max-w-[760px]">
             Purpose-built for high-stakes cyber investigations.
           </h2>
         </div>
@@ -63,10 +63,10 @@ export function UseCasesSection() {
           {useCases.map((uc) => (
             <div
               key={uc.title}
-              className="bg-white rounded-[25px] p-8 flex flex-col gap-4 min-h-[220px]"
+              className="bg-card-bg rounded-[25px] p-8 flex flex-col gap-4 min-h-[220px]"
             >
-              <h3 className="text-gray-950 text-lg font-bold">{uc.title}</h3>
-              <p className="text-gray-700 text-sm leading-relaxed flex-1">
+              <h3 className="text-heading text-lg font-bold">{uc.title}</h3>
+              <p className="text-body text-sm leading-relaxed flex-1">
                 {uc.description}
               </p>
               <div className="flex flex-wrap gap-2">

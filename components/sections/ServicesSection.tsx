@@ -85,10 +85,10 @@ export function ServicesSection() {
           {services.map((svc) => (
             <button
               key={svc.name}
-              className="bg-white rounded-[20px] p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
+              className="bg-card-bg rounded-[20px] p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
             >
               {svc.icon}
-              <span className="text-gray-950 text-sm text-center whitespace-pre-line leading-tight">
+              <span className="text-heading text-sm text-center whitespace-pre-line leading-tight">
                 {svc.name}
               </span>
             </button>

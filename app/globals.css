@@ -1,90 +1,217 @@
 @import "tailwindcss";
 
-/* ─── Design Tokens ─────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════
+   Logicode Design Tokens
+   Source: Figma — Landing Page / Style Guide (node 93-6559)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Palette Scales ───────────────────────────────────────────
+   Raw color values from the Figma style guide.
+   These are NOT consumed directly by components — they feed the
+   semantic tokens below.
+   ───────────────────────────────────────────────────────────── */
 :root {
-  /* Brand greens */
-  --brand:           #20a64c;
-  --brand-bright:    #28f06a;
-  --brand-mint:      #bef4cf;
-  --brand-light-bg:  #eaf2ec;
-  --brand-header-bg: #f4f8f5;
-  --brand-tag-bg:    rgba(32, 166, 76, 0.1);
-  --brand-tag-bg-30: rgba(32, 166, 76, 0.3);
+  /* ── Base Gray ─────────────────────────────────────────────── */
+  --gray-white:  #ffffff;
+  --gray-50:     #f6f6f6;
+  --gray-100:    #e7e7e7;
+  --gray-200:    #d1d1d1;
+  --gray-300:    #b0b0b0;
+  --gray-350:    #a0a0a0;
+  --gray-400:    #888888;
+  --gray-500:    #6d6d6d;
+  --gray-600:    #5d5d5d;
+  --gray-700:    #4f4f4f;
+  --gray-800:    #454545;
+  --gray-850:    #2b2b2b;
+  --gray-900:    #191919;
+  --gray-950:    #101010;
+  --gray-1000:   #0b0b0b;
 
-  /* Grays (Figma design system) */
-  --gray-50:   #f6f6f6;
-  --gray-100:  #e7e7e7;
-  --gray-300:  #b0b0b0;
-  --gray-500:  #6d6d6d;
-  --gray-600:  #5d5d5d;
-  --gray-700:  #4f4f4f;
-  --gray-850:  #2b2b2b;
-  --gray-950:  #101010;
-  --gray-1000: #0b0b0b;
+  /* ── Green Primary ─────────────────────────────────────────── */
+  --green-50:    #eefff2;
+  --green-100:   #d8ffe5;
+  --green-200:   #b3ffcb;
+  --green-300:   #78fda3;
+  --green-400:   #28f06a;
+  --green-mid:   #20a64c;   /* light-mode accent (not in scale) */
 
-  /* Dark-slide palette */
-  --dark-base:    #060a0f;
-  --dark-surface: #0e1416;
-  --dark-text:    #e6f9ef;
-  --dark-muted:   #9aa6a8;
-
-  /* Semantic — light mode */
-  --background:  #ffffff;
-  --foreground:  var(--gray-950);
-  --surface:     var(--gray-50);
-  --text-body:   var(--gray-700);
-  --text-muted:  var(--gray-500);
-  --border:      var(--gray-100);
+  /* ── Blue Gray (secondary) ─────────────────────────────────── */
+  --blue-gray-50:  #f5f7fa;
+  --blue-gray-100: #eaeef4;
+  --blue-gray-200: #d1dbe6;
+  --blue-gray-300: #a9bbd0;
+  --blue-gray-400: #7a97b6;
+  --blue-gray-500: #597b9e;
+  --blue-gray-600: #405a78;
 }
 
-/* ─── Dark mode overrides ────────────────────────────────────── */
+/* ─── Semantic Tokens (light mode) ─────────────────────────── */
+:root {
+  /* Typography */
+  --accent:            var(--green-mid);
+  --heading:           var(--gray-950);
+  --body:              var(--gray-700);
+  --body-muted:        var(--gray-500);
+  --body-subtle:       var(--gray-600);
+  --background:        var(--gray-white);
+  --foreground:        var(--gray-950);
+
+  /* Surfaces */
+  --section-bg:        #eaf2ec;
+  --card-bg:           var(--gray-white);
+  --card-bg-muted:     var(--gray-50);
+  --header-top-from:   #f4f8f5;
+  --header-top-to:     #f4f8f5;
+  --header-nav-bg:     #eaf2ec;
+  --search-bg:         var(--gray-100);
+
+  /* Buttons */
+  --btn-secondary-bg:  var(--gray-950);
+  --btn-dark-bg:       var(--gray-850);
+
+  /* Tags / badges */
+  --tag-bg:            rgba(32, 166, 76, 0.1);
+  --tag-text:          var(--gray-950);
+  --tag-mint-bg:       #bef4cf;
+
+  /* Footer */
+  --footer-bg:         var(--gray-white);
+  --footer-heading:    #16211b;
+  --footer-link:       var(--gray-600);
+  --footer-social-bg:  rgba(32, 166, 76, 0.2);
+  --footer-social-bdr: rgba(32, 166, 76, 0.2);
+  --footer-border:     rgba(0, 0, 0, 0.05);
+
+  /* Nav */
+  --nav-link:          var(--gray-500);
+
+  /* Misc */
+  --brand-bright:      var(--green-400);
+  --border:            var(--gray-100);
+
+  /* Hero dark-slide palette (static, does not change with theme) */
+  --dark-base:         #060a0f;
+  --dark-surface:      #0e1416;
+  --dark-text:         #e6f9ef;
+  --dark-muted:        #9aa6a8;
+}
+
+/* ─── Dark Mode Overrides ──────────────────────────────────── */
 .dark {
-  --background: var(--dark-base);
-  --foreground: var(--dark-text);
-  --surface:    #0f1a14;
-  --text-body:  var(--dark-muted);
-  --text-muted: var(--gray-500);
-  --border:     rgba(255, 255, 255, 0.08);
+  --accent:            var(--green-400);
+  --heading:           var(--green-50);
+  --body:              var(--gray-350);
+  --body-muted:        var(--gray-300);
+  --body-subtle:       var(--gray-400);
+  --background:        #0a1019;
+  --foreground:        var(--green-50);
+
+  --section-bg:        #0a1019;
+  --card-bg:           #111b2a;
+  --card-bg-muted:     #111b2a;
+  --header-top-from:   #11161d;
+  --header-top-to:     #171d24;
+  --header-nav-bg:     #04070b;
+  --search-bg:         rgba(43, 43, 43, 0.4);
+
+  --btn-secondary-bg:  var(--gray-850);
+  --btn-dark-bg:       var(--gray-850);
+
+  --tag-bg:            rgba(40, 240, 106, 0.14);
+  --tag-text:          var(--gray-white);
+  --tag-mint-bg:       rgba(40, 240, 106, 0.14);
+
+  --footer-bg:         #0a1019;
+  --footer-heading:    var(--green-50);
+  --footer-link:       var(--gray-400);
+  --footer-social-bg:  rgba(255, 255, 255, 0.03);
+  --footer-social-bdr: rgba(255, 255, 255, 0.05);
+  --footer-border:     rgba(255, 255, 255, 0.05);
+
+  --nav-link:          var(--gray-350);
+  --border:            rgba(255, 255, 255, 0.08);
 }
 
-/* ─── Tailwind v4 theme extension ───────────────────────────── */
+/* ─── Tailwind v4 Theme Extension ──────────────────────────── */
 @theme inline {
-  /* Semantic surfaces */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface:    var(--surface);
-  --color-border:     var(--border);
+  /* Palette scales (available as bg-gray-50, text-green-400, etc.) */
+  --color-gray-white:    var(--gray-white);
+  --color-gray-50:       var(--gray-50);
+  --color-gray-100:      var(--gray-100);
+  --color-gray-200:      var(--gray-200);
+  --color-gray-300:      var(--gray-300);
+  --color-gray-350:      var(--gray-350);
+  --color-gray-400:      var(--gray-400);
+  --color-gray-500:      var(--gray-500);
+  --color-gray-600:      var(--gray-600);
+  --color-gray-700:      var(--gray-700);
+  --color-gray-800:      var(--gray-800);
+  --color-gray-850:      var(--gray-850);
+  --color-gray-900:      var(--gray-900);
+  --color-gray-950:      var(--gray-950);
+  --color-gray-1000:     var(--gray-1000);
 
-  /* Brand palette */
-  --color-brand:           var(--brand);
+  --color-green-50:      var(--green-50);
+  --color-green-100:     var(--green-100);
+  --color-green-200:     var(--green-200);
+  --color-green-300:     var(--green-300);
+  --color-green-400:     var(--green-400);
+
+  --color-blue-gray-50:  var(--blue-gray-50);
+  --color-blue-gray-100: var(--blue-gray-100);
+  --color-blue-gray-200: var(--blue-gray-200);
+  --color-blue-gray-300: var(--blue-gray-300);
+  --color-blue-gray-400: var(--blue-gray-400);
+  --color-blue-gray-500: var(--blue-gray-500);
+  --color-blue-gray-600: var(--blue-gray-600);
+
+  /* Semantic tokens (theme-aware, auto-switch light↔dark) */
+  --color-accent:          var(--accent);
+  --color-heading:         var(--heading);
+  --color-body:            var(--body);
+  --color-body-muted:      var(--body-muted);
+  --color-body-subtle:     var(--body-subtle);
+  --color-background:      var(--background);
+  --color-foreground:      var(--foreground);
+  --color-section-bg:      var(--section-bg);
+  --color-card-bg:         var(--card-bg);
+  --color-card-bg-muted:   var(--card-bg-muted);
+  --color-header-nav-bg:   var(--header-nav-bg);
+  --color-search-bg:       var(--search-bg);
+  --color-btn-secondary:   var(--btn-secondary-bg);
+  --color-btn-dark:        var(--btn-dark-bg);
+  --color-tag-bg:          var(--tag-bg);
+  --color-tag-text:        var(--tag-text);
+  --color-tag-mint:        var(--tag-mint-bg);
+  --color-footer-bg:       var(--footer-bg);
+  --color-footer-heading:  var(--footer-heading);
+  --color-footer-link:     var(--footer-link);
+  --color-footer-social-bg:  var(--footer-social-bg);
+  --color-footer-social-bdr: var(--footer-social-bdr);
+  --color-footer-border:   var(--footer-border);
+  --color-nav-link:        var(--nav-link);
+  --color-border:          var(--border);
+
+  /* Aliases (backwards compat with existing class names) */
+  --color-brand:           var(--accent);
+  --color-brand-light-bg:  var(--section-bg);
+  --color-brand-mint:      var(--tag-mint-bg);
   --color-brand-bright:    var(--brand-bright);
-  --color-brand-mint:      var(--brand-mint);
-  --color-brand-light-bg:  var(--brand-light-bg);
-  --color-brand-header-bg: var(--brand-header-bg);
-
-  /* Gray scale (design-system-aligned) */
-  --color-gray-50:   var(--gray-50);
-  --color-gray-100:  var(--gray-100);
-  --color-gray-300:  var(--gray-300);
-  --color-gray-500:  var(--gray-500);
-  --color-gray-600:  var(--gray-600);
-  --color-gray-700:  var(--gray-700);
-  --color-gray-850:  var(--gray-850);
-  --color-gray-950:  var(--gray-950);
 
   /* Fonts */
   --font-sans:    var(--font-geist-sans);
   --font-display: var(--font-poppins);
 }
 
-/* ─── Base styles ───────────────────────────────────────────── */
+/* ─── Base Styles ──────────────────────────────────────────── */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-/* ─── Layout utility ────────────────────────────────────────── */
+/* ─── Layout Utility ───────────────────────────────────────── */
 .section-container {
   margin-inline: auto;
   max-width: 1440px;
@@ -103,7 +230,7 @@ body {
   .section-container { padding-inline: 0; }
 }
 
-/* ─── Marquee animation ─────────────────────────────────────── */
+/* ─── Marquee Animation ────────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }

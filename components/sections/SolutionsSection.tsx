@@ -27,10 +27,10 @@ export function SolutionsSection() {
       <div className="section-container flex flex-col gap-8">
         {/* ── Section header ──────────────────────────────── */}
         <div className="flex flex-col gap-2">
-          <span className="text-brand text-sm font-medium">
+          <span className="text-accent text-sm font-medium">
             Investigation workflow
           </span>
-          <h2 className="text-gray-950 text-[32px] font-bold">
+          <h2 className="text-heading text-[32px] font-bold">
             Cybersecurity Solutions
           </h2>
         </div>
@@ -42,10 +42,10 @@ export function SolutionsSection() {
             onClick={() =>
               setCurrent((p) => (p - 1 + solutions.length) % solutions.length)
             }
-            className="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors"
+            className="flex-shrink-0 w-12 h-12 rounded-full bg-card-bg flex items-center justify-center hover:opacity-80 transition-colors"
             aria-label="Previous"
           >
-            <svg className="w-6 h-6 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="w-6 h-6 text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
@@ -53,7 +53,7 @@ export function SolutionsSection() {
           {/* Card */}
           <div className="w-[367px] flex flex-col rounded-xl overflow-hidden">
             {/* Logo area */}
-            <div className="bg-white rounded-t-xl p-8 flex items-center justify-center min-h-[122px]">
+            <div className="bg-card-bg rounded-t-xl p-8 flex items-center justify-center min-h-[122px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={sol.logo}
@@ -62,8 +62,8 @@ export function SolutionsSection() {
               />
             </div>
             {/* Description */}
-            <div className="bg-gray-50 rounded-b-xl px-7 py-8">
-              <p className="text-gray-700 text-xs leading-relaxed text-center">
+            <div className="bg-card-bg-muted rounded-b-xl px-7 py-8">
+              <p className="text-body text-xs leading-relaxed text-center">
                 {sol.description}
               </p>
             </div>
@@ -74,10 +74,10 @@ export function SolutionsSection() {
             onClick={() =>
               setCurrent((p) => (p + 1) % solutions.length)
             }
-            className="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors"
+            className="flex-shrink-0 w-12 h-12 rounded-full bg-card-bg flex items-center justify-center hover:opacity-80 transition-colors"
             aria-label="Next"
           >
-            <svg className="w-6 h-6 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="w-6 h-6 text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>

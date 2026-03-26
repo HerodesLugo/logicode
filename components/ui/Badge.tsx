@@ -10,11 +10,11 @@ interface BadgeProps {
 
 const variantClasses: Record<BadgeVariant, string> = {
   green:
-    "bg-[var(--brand-tag-bg)] text-[var(--gray-950)]",
+    "bg-tag-bg text-tag-text",
   mint:
-    "bg-brand-mint text-gray-950",
+    "bg-brand-mint text-tag-text",
   "brand-outline":
-    "bg-[var(--brand-tag-bg)] border border-brand/20 text-brand",
+    "bg-tag-bg border border-accent/20 text-accent",
 };
 
 export function Badge({

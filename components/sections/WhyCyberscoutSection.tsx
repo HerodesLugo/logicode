@@ -52,16 +52,16 @@ const cards: FeatureCard[] = [
 
 export function WhyCyberscoutSection() {
   return (
-    <section className="w-full bg-white py-20 lg:py-[84px]">
+    <section className="w-full bg-card-bg py-20 lg:py-[84px]">
       <div className="section-container flex flex-col gap-10">
         {/* ── Section header ──────────────────────────────── */}
         <div className="flex flex-col gap-4 max-w-[760px]">
-          <span className="text-brand text-sm font-medium">Why Cyberscout?</span>
-          <h2 className="text-gray-950 text-3xl lg:text-[32px] font-bold leading-tight">
+          <span className="text-accent text-sm font-medium">Why Cyberscout?</span>
+          <h2 className="text-heading text-3xl lg:text-[32px] font-bold leading-tight">
             The leading cybersecurity workspace that transforms fragmented
             evidence into connected, actionable intelligence.
           </h2>
-          <p className="text-gray-700 text-sm leading-relaxed max-w-[616px]">
+          <p className="text-body text-sm leading-relaxed max-w-[616px]">
             Transition from raw data to analyst-ready insights with graph-based
             investigation tools designed for complex scenarios, large datasets,
             and stringent evidentiary standards.
@@ -73,7 +73,7 @@ export function WhyCyberscoutSection() {
           {cards.map((card) => (
             <div
               key={card.title}
-              className="flex flex-col rounded-[20px] overflow-hidden bg-gray-50 backdrop-blur-[15px]"
+              className="flex flex-col rounded-[20px] overflow-hidden bg-card-bg-muted backdrop-blur-[15px]"
             >
               {/* Image */}
               <div className="h-[272px] overflow-hidden">
@@ -88,16 +88,16 @@ export function WhyCyberscoutSection() {
               {/* Content */}
               <div className="flex flex-col gap-4 px-8 py-6 pb-8">
                 <div>
-                  <h3 className="text-gray-950 text-lg font-bold mb-2">
+                  <h3 className="text-heading text-lg font-bold mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-gray-700 text-xs leading-relaxed">
+                  <p className="text-body text-xs leading-relaxed">
                     {card.description}
                   </p>
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <span className="text-gray-950 text-sm font-bold">
+                  <span className="text-heading text-sm font-bold">
                     Core Capabilities
                   </span>
                   <div className="flex flex-col gap-2">
