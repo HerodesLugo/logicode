@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HEADER_LOGO_LIGHT, HEADER_LOGO_DARK } from "@/lib/assets";
+import Link from "next/link";
 
 const logoLightUrl = HEADER_LOGO_LIGHT;
 const logoDarkUrl = HEADER_LOGO_DARK;
@@ -16,7 +17,7 @@ export function Header() {
       >
         <div className="section-container flex h-[92px] items-center justify-between gap-6">
           {/* Logo — light version hidden in dark, dark version hidden in light */}
-          <a href="/" className="flex-shrink-0">
+          <Link href="/" className="shrink-0">
             <Image
               src={logoLightUrl}
               alt="Logicode"
@@ -35,14 +36,14 @@ export function Header() {
               unoptimized
               className="h-10 w-auto object-contain hidden dark:block"
             />
-          </a>
+          </Link>
 
           {/* Search + CTAs */}
           <div className="flex items-center gap-4 ml-auto">
             {/* Search — hidden on mobile */}
             <div className="hidden md:flex items-center gap-2 bg-search-bg px-4 py-3 rounded-[20px] w-52 lg:w-72">
               <svg
-                className="w-4 h-4 text-body-muted opacity-50 flex-shrink-0"
+                className="w-4 h-4 text-body-muted opacity-50 shrink-0"
                 viewBox="0 0 16 16"
                 fill="none"
               >
@@ -62,7 +63,7 @@ export function Header() {
             </button>
 
             {/* Request Demo */}
-            <button className="flex items-center gap-2 bg-accent text-white dark:text-[#101010] px-8 py-4 rounded-[20px] text-sm font-medium hover:opacity-90 transition-colors">
+            <button className="flex items-center gap-2 bg-accent text-white dark:text-gray-950 px-8 py-4 rounded-[20px] text-sm font-medium hover:opacity-90 transition-colors">
               Request Demo
               <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
