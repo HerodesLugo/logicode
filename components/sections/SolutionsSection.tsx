@@ -36,36 +36,39 @@ export function SolutionsSection() {
         </div>
 
         {/* ── Carousel ────────────────────────────────────── */}
-        <div className="relative flex items-center gap-6">
+        <div className="relative w-full">
           {/* Left arrow */}
           <button
             onClick={() =>
               setCurrent((p) => (p - 1 + solutions.length) % solutions.length)
             }
-            className="flex-shrink-0 w-12 h-12 rounded-full bg-card-bg flex items-center justify-center hover:opacity-80 transition-colors"
+            className="absolute -left-6 md:-left-16 top-1/2 -translate-y-1/2 shrink-0 flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Previous"
           >
-            <svg className="w-6 h-6 text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="w-8 h-8 text-accent dark:text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
 
-          {/* Card */}
-          <div className="w-[367px] flex flex-col rounded-xl overflow-hidden">
-            {/* Logo area */}
-            <div className="bg-card-bg rounded-t-xl p-8 flex items-center justify-center min-h-[122px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={sol.logo}
-                alt=""
-                className="h-[58px] w-auto object-contain"
-              />
-            </div>
-            {/* Description */}
-            <div className="bg-card-bg-muted rounded-b-xl px-7 py-8">
-              <p className="text-body text-xs leading-relaxed text-center">
-                {sol.description}
-              </p>
+          {/* Cards container */}
+          <div className="flex gap-6 overflow-hidden w-full">
+            {/* Card */}
+            <div className="w-[367px] flex flex-col rounded-[20px] overflow-hidden">
+              {/* Logo area */}
+              <div className="bg-card-bg p-8 flex items-center justify-center min-h-[140px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={sol.logo}
+                  alt="Garbo Logo"
+                  className="h-[48px] w-auto object-contain dark:brightness-0 dark:invert transition-all duration-300"
+                />
+              </div>
+              {/* Description */}
+              <div className="bg-card-bg-muted px-8 py-8 flex-1">
+                <p className="text-body text-[13px] leading-[1.6]">
+                  {sol.description}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -74,10 +77,10 @@ export function SolutionsSection() {
             onClick={() =>
               setCurrent((p) => (p + 1) % solutions.length)
             }
-            className="flex-shrink-0 w-12 h-12 rounded-full bg-card-bg flex items-center justify-center hover:opacity-80 transition-colors"
+            className="absolute -right-6 md:-right-16 top-1/2 -translate-y-1/2 shrink-0 flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Next"
           >
-            <svg className="w-6 h-6 text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="w-8 h-8 text-accent dark:text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>

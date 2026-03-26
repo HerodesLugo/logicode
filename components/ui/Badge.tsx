@@ -24,7 +24,7 @@ export function Badge({
 }: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center max-w-fit px-3 py-1.5 rounded-full text-xs font-medium ${variantClasses[variant]} ${className}`}
     >
       {children}
     </span>

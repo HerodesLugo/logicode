@@ -4,7 +4,7 @@ const globeImg = GLOBE_IMG;
 
 export function GlobalThreatSection() {
   return (
-    <section className="relative w-full bg-brand-light-bg overflow-hidden">
+    <section className="relative w-full bg-brand-light-bg pt-28 overflow-hidden">
       <div className="section-container relative flex flex-col items-center justify-center min-h-[700px] lg:min-h-[786px] py-20">
         {/* ── Globe background ──────────────────────────────── */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

@@ -74,7 +74,7 @@
   --btn-dark-bg:       var(--gray-850);
 
   /* Tags / badges */
-  --tag-bg:            rgba(32, 166, 76, 0.1);
+  --tag-bg:            rgba(32, 166, 76, 0.30);
   --tag-text:          var(--gray-950);
   --tag-mint-bg:       #bef4cf;
 
