@@ -23,7 +23,7 @@ export function PartnersMarquee() {
   const logos = [...partnerLogos, ...partnerLogos, ...partnerLogos];
 
   return (
-    <section className="w-full overflow-hidden py-3 bg-brand-light-bg">
+    <section className="w-full overflow-hidden py-24 bg-brand-light-bg">
       <div className="marquee-track">
         {logos.map((logo, i) => (
           // eslint-disable-next-line @next/next/no-img-element

@@ -44,7 +44,7 @@ export function Footer() {
               width={175}
               height={40}
               unoptimized
-              className="h-10 w-auto object-contain dark:hidden"
+              className="h-16 w-auto  dark:hidden"
             />
             <Image
               src={logoDarkUrl}
@@ -52,7 +52,7 @@ export function Footer() {
               width={175}
               height={40}
               unoptimized
-              className="h-10 w-auto object-contain hidden dark:block"
+              className="h-16 w-auto  hidden dark:block"
             />
             <p className="text-footer-link text-sm leading-relaxed">
               Next-generation digital forensics and probabilistic link analysis
