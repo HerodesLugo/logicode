@@ -163,13 +163,13 @@ export function HeroSection() {
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(to right, ${c.gradientColor} 0%, transparent 100%)`,
+            background: `linear-gradient(to right, ${c.gradientColor} 0%, ${c.gradientColor}00 100%)`,
           }}
         />
         <div
           className="absolute inset-0 hidden lg:block"
           style={{
-            background: `linear-gradient(to right, ${c.gradientColor} 0%, transparent 30%)`,
+            background: `linear-gradient(to right, ${c.gradientColor} 0%, ${c.gradientColor}00 30%)`,
           }}
         />
       </div>
