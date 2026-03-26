@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ═══════════════════════════════════════════════════════════════
    Logicode Design Tokens
    Source: Figma — Landing Page / Style Guide (node 93-6559)
