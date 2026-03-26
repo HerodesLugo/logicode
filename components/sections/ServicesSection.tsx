@@ -99,11 +99,11 @@ export function ServicesSection() {
   return (
     <section className="w-full bg-brand-light-bg py-6 lg:py-10">
       <div className="section-container">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4 lg:gap-6">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 lg:gap-6 pb-6 pt-2 sm:grid sm:grid-cols-4 md:grid-cols-7 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-6 px-6 sm:mx-0 sm:px-0">
           {services.map((svc) => (
             <button
               key={svc.name}
-              className="bg-card-bg dark:bg-[linear-gradient(221deg,#263f64_8%,#0d1521_92%)] rounded-[20px] p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
+              className="snap-center shrink-0 w-[150px] sm:w-auto bg-card-bg dark:bg-[linear-gradient(221deg,#263f64_8%,#0d1521_92%)] rounded-[20px] p-6 lg:p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
             >
               {/* Light mode: inline SVG icon */}
               <span className="dark:hidden">{svc.lightIcon}</span>

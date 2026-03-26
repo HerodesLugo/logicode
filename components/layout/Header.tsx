@@ -16,11 +16,10 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full">
+      <header className="absolute md:sticky top-0 z-50 w-full">
         {/* ── Top bar: logo + search + CTAs ─────────────────── */}
         <div
-          className="border-b border-border"
-          style={{ background: `linear-gradient(to right, var(--header-top-from), var(--header-top-to))` }}
+          className="border-b border-transparent md:border-border md:bg-[linear-gradient(to_right,var(--header-top-from),var(--header-top-to))]"
         >
           <div className="section-container flex h-[92px] items-center justify-between gap-4">
             {/* Logo */}

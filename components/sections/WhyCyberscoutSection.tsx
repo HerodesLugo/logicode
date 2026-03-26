@@ -50,11 +50,11 @@ const cards: FeatureCard[] = [
 
 export function WhyCyberscoutSection() {
   return (
-    <section className="w-full bg-card-bg py-20 lg:py-[84px]">
+    <section className="w-full bg-card-bg py-20 lg:py-[84px] overflow-hidden">
       <div className="section-container flex flex-col gap-10">
         {/* ── Section header ──────────────────────────────── */}
         <div className="flex flex-col gap-4 max-w-[760px]">
-          <span className="text-accent text-sm font-medium">Why Cyberscout?</span>
+          <span className="text-accent text-sm font-medium">Why Logicode</span>
           <h2 className="text-heading text-3xl lg:text-[32px] font-bold leading-tight">
             The leading cybersecurity workspace that transforms fragmented
             evidence into connected, actionable intelligence.
@@ -66,15 +66,15 @@ export function WhyCyberscoutSection() {
           </p>
         </div>
 
-        {/* ── Feature cards ───────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
+        {/* ── Feature cards (Carousel on Mobile) ──────────── */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-6 px-6 md:mx-0 md:px-0">
           {cards.map((card) => (
             <div
               key={card.title}
-              className="flex flex-col rounded-[20px] overflow-hidden bg-card-bg-muted backdrop-blur-[15px]"
+              className="snap-center shrink-0 w-[85vw] md:w-auto flex flex-col rounded-[20px] overflow-hidden bg-card-bg-muted backdrop-blur-[15px]"
             >
               {/* Image */}
-              <div className="h-[272px] overflow-hidden">
+              <div className="h-[230px] md:h-[272px] overflow-hidden shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={card.image}
@@ -84,17 +84,17 @@ export function WhyCyberscoutSection() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-4 px-8 py-6 pb-8">
+              <div className="flex flex-col gap-5 px-6 md:px-8 py-6 pb-8 flex-1">
                 <div>
                   <h3 className="text-heading text-lg font-bold mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-body text-xs leading-relaxed">
+                  <p className="text-body text-[13px] md:text-xs leading-relaxed">
                     {card.description}
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 mt-auto">
                   <span className="text-heading text-sm font-bold">
                     Core Capabilities
                   </span>
@@ -108,6 +108,16 @@ export function WhyCyberscoutSection() {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Visual Dots (Mobile only) */}
+        <div className="flex md:hidden justify-center gap-2 -mt-4">
+          {cards.map((_, i) => (
+            <div
+              key={i}
+              className={`h-1.5 rounded-full ${i === 0 ? "w-8 bg-accent" : "w-4 bg-accent/30"}`}
+            />
           ))}
         </div>
       </div>

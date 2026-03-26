@@ -143,40 +143,46 @@ export function HeroSection() {
     >
       {/* ── Background image (right half) ──────────────────── */}
       <div
-        className="absolute inset-y-0 right-0 w-full lg:w-[70%] pointer-events-none"
+        className="absolute inset-0 md:left-auto md:right-0 w-full lg:w-[70%] pointer-events-none"
         aria-hidden="true"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={slide.image}
           alt=""
-          className="w-full h-full object-cover opacity-80 lg:opacity-100 transition-opacity duration-700"
+          className="w-full h-full object-cover opacity-60 md:opacity-80 lg:opacity-100 transition-opacity duration-700"
         />
-        {/* Gradient fade to left */}
+        {/* Gradient fade to left - only strong on Desktop, subtle on mobile for readability */}
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(to right, ${c.gradientColor} 0%, transparent 50%)`,
+            background: `linear-gradient(to right, ${c.gradientColor} 0%, transparent 100%)`,
+          }}
+        />
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background: `linear-gradient(to right, ${c.gradientColor} 0%, transparent 30%)`,
           }}
         />
       </div>
 
       {/* ── Content ─────────────────────────────────────────── */}
-      <div className="relative section-container h-full flex items-center">
-        <div className="flex flex-col gap-5 max-w-[565px]">
+      <div className="relative section-container h-full flex flex-col justify-center pt-[92px] md:pt-0">
+        <div className="flex flex-col gap-4 md:gap-5 max-w-[565px] mt-4 md:mt-0">
           {/* Tag */}
           <span
-            className="inline-flex self-start px-3 py-1.5 rounded-full text-xs font-semibold font-display"
-            style={{ backgroundColor: c.tagBg, color: c.tagColor }}
+            className="inline-flex self-start px-4 py-1.5 rounded-full text-xs font-semibold font-display border border-current"
+            style={{ backgroundColor: "transparent", color: c.tagColor }}
           >
             {slide.tag}
           </span>
 
           {/* Heading */}
-          <div className="flex flex-col -mt-1">
+          <div className="flex flex-col -mt-1 md:mt-0">
             <span
-              className="font-display text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] tracking-[-0.045em] font-normal"
-              style={{ color: c.headingRegularColor }}
+              className="font-display text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] tracking-[-0.045em] font-bold md:font-normal text-white md:text-inherit"
+              style={{ color: resolvedTheme === "dark" || !mounted ? undefined : c.headingRegularColor }}
             >
               {slide.headingRegular}
             </span>
@@ -190,14 +196,14 @@ export function HeroSection() {
 
           {/* Body */}
           <p
-            className="text-sm leading-relaxed font-normal"
+            className="hidden md:block text-sm leading-relaxed font-normal"
             style={{ color: c.bodyColor }}
           >
             {slide.body}
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row flex-wrap w-full gap-4 mt-2">
+          <div className="flex flex-col sm:flex-row flex-wrap w-full gap-4 mt-4 md:mt-2">
             <button
               className="w-full sm:w-auto px-8 py-4 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
               style={{

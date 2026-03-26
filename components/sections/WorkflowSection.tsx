@@ -80,33 +80,33 @@ export function WorkflowSection() {
         {/* ── Two-column layout ───────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left card: 4-step process */}
-          <div className="bg-card-bg rounded-[20px] p-8 flex flex-col gap-[60px]">
+          <div className="bg-card-bg rounded-[20px] p-6 md:p-8 flex flex-col gap-10 md:gap-[60px]">
             {/* Card header */}
-            <div className="flex flex-col gap-4">
-              <h3 className="font-display font-semibold text-xl text-accent">
+            <div className="flex flex-col gap-3">
+              <h3 className="font-display font-semibold text-lg md:text-xl text-accent">
                 Threat landscape assessment
               </h3>
-              <p className="text-body-muted text-xs">
+              <p className="text-body-muted text-[13px] md:text-xs">
                 Vulnerability prioritization and mitigation
               </p>
             </div>
 
             {/* Steps */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 md:gap-8">
               {steps.map((step) => (
-                <div key={step.number} className="grid grid-cols-[64px_1fr] gap-[18px]">
+                <div key={step.number} className="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-[18px]">
                   {/* Number badge */}
-                  <div className="flex-shrink-0 w-16 h-16 rounded-[20px] bg-tag-bg flex items-center justify-center">
-                    <span className="text-accent text-2xl font-normal">
+                  <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-[14px] md:rounded-[20px] bg-tag-bg flex items-center justify-center">
+                    <span className="text-accent text-xl md:text-2xl font-normal">
                       {step.number}
                     </span>
                   </div>
                   {/* Text */}
-                  <div className="flex flex-col gap-2 pt-1">
-                    <span className="text-heading text-lg font-bold">
+                  <div className="flex flex-col gap-1.5 md:gap-2 pt-0.5 md:pt-1">
+                    <span className="text-heading text-base md:text-lg font-bold leading-none">
                       {step.title}
                     </span>
-                    <p className="text-body text-xs leading-relaxed">
+                    <p className="text-body text-[13px] md:text-xs leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -116,7 +116,7 @@ export function WorkflowSection() {
           </div>
 
           {/* Right card: metrics */}
-          <div className="bg-card-bg rounded-[20px] p-8 flex flex-col justify-between gap-8">
+          <div className="bg-card-bg rounded-[20px] p-6 md:p-8 flex flex-col justify-between gap-8">
             {/* Card header */}
             <div className="flex flex-col gap-4">
               <h3 className="font-display font-semibold text-xl text-accent">
