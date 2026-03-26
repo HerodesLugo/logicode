@@ -44,7 +44,7 @@ export function GlobalThreatSection() {
           </span>
 
           {/* Quote */}
-          <blockquote className="text-body text-base leading-relaxed max-w-[400px] text-left mt-4">
+          <blockquote className="text-body text-base leading-relaxed max-w-[400px] text-center mt-4">
             &ldquo;Logicode tools are like a powerful lens, clarifying the
             cybersecurity landscape.&rdquo;
           </blockquote>

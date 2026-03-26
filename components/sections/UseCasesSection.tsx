@@ -81,8 +81,8 @@ export function UseCasesSection() {
         </div>
 
         {/* ── CTA ─────────────────────────────────────────── */}
-        <div className="flex justify-center">
-          <Button variant="primary" icon={arrowIcon}>
+        <div className="flex justify-center w-full">
+          <Button variant="primary" icon={arrowIcon} className="w-full md:w-auto justify-center">
             Case Studies
           </Button>
         </div>

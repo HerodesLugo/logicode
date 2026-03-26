@@ -197,9 +197,9 @@ export function HeroSection() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap w-full gap-4 mt-2">
             <button
-              className="px-8 py-4 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
+              className="w-full sm:w-auto px-8 py-4 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
               style={{
                 backgroundColor: c.primaryBtnBg,
                 color: c.primaryBtnColor,
@@ -208,7 +208,7 @@ export function HeroSection() {
               {slide.primaryBtn}
             </button>
             <button
-              className="px-8 py-4 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
+              className="w-full sm:w-auto px-8 py-4 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
               style={{
                 backgroundColor: c.secondaryBtnBg,
                 color: c.secondaryBtnColor,

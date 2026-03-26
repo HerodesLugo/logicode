@@ -119,23 +119,27 @@ export function Footer() {
         </div>
 
         {/* ── Bottom bar ──────────────────────────────────── */}
-        <div className="border-t border-footer-border pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="border-t border-footer-border pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <span className="text-footer-link text-sm">
             © 2025 Logicode Technologies, Inc. All rights reserved.
           </span>
 
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-footer-link text-sm hover:text-heading transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-footer-link text-sm hover:text-heading transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="text-footer-link text-sm hover:text-heading transition-colors">
-              Cookie Settings
-            </a>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 w-full sm:w-auto">
+            <div className="flex flex-wrap gap-4 sm:gap-6">
+              <a href="#" className="text-footer-link text-sm hover:text-heading transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-footer-link text-sm hover:text-heading transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="text-footer-link text-sm hover:text-heading transition-colors">
+                Cookie Settings
+              </a>
+            </div>
             {/* Theme toggle */}
-            <ThemeToggle />
+            <div className="mt-2 sm:mt-0">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

@@ -99,7 +99,7 @@ export function ServicesSection() {
   return (
     <section className="w-full bg-brand-light-bg py-6 lg:py-10">
       <div className="section-container">
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4 lg:gap-6">
           {services.map((svc) => (
             <button
               key={svc.name}

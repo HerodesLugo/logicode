@@ -36,11 +36,11 @@ export function CTABannerSection() {
             </div>
 
             {/* Right CTAs */}
-            <div className="flex flex-wrap gap-4 items-center justify-start lg:justify-end">
-              <button className="bg-[#111b2a] text-white px-8 py-4 rounded-[20px] text-sm font-medium hover:bg-[#1a2539] transition-colors">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-start lg:justify-end w-full">
+              <button className="w-full sm:w-auto bg-[#111b2a] text-white px-8 py-4 rounded-[20px] text-sm font-medium hover:bg-[#1a2539] transition-colors">
                 Connect with an Expert
               </button>
-              <button className="bg-[#28f06a] text-gray-950 px-8 py-4 rounded-[20px] text-sm font-medium hover:bg-[#22d55e] transition-colors">
+              <button className="w-full sm:w-auto bg-[#28f06a] text-gray-950 px-8 py-4 rounded-[20px] text-sm font-medium hover:bg-[#22d55e] transition-colors">
                 Request a Demo
               </button>
             </div>
