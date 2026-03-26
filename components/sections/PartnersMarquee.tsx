@@ -31,7 +31,7 @@ export function PartnersMarquee() {
             key={i}
             src={logo.src}
             alt={logo.alt}
-            className="h-[47px] object-contain mx-[100px] flex-shrink-0 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            className="h-[47px] object-contain mx-[100px] flex-shrink-0 dark:opacity-100 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 dark:brightness-0 dark:invert transition-all duration-300"
             style={{ width: logo.width }}
           />
         ))}
