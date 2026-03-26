@@ -146,12 +146,19 @@ export function HeroSection() {
         className="absolute inset-0 md:left-auto md:right-0 w-full lg:w-[70%] pointer-events-none"
         aria-hidden="true"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={slide.image}
-          alt=""
-          className="w-full h-full object-cover opacity-60 md:opacity-80 lg:opacity-100 transition-opacity duration-700"
-        />
+        {slides.map((s, i) => (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            key={s.id}
+            src={s.image}
+            alt=""
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+              i === active
+                ? "opacity-40 md:opacity-80 lg:opacity-100"
+                : "opacity-0"
+            }`}
+          />
+        ))}
         {/* Gradient fade to left - only strong on Desktop, subtle on mobile for readability */}
         <div
           className="absolute inset-0"
