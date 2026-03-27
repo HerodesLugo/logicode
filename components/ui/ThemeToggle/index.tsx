@@ -1,20 +1,16 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { SunIcon, MoonIcon } from "@/components/icons";
+import { useIsMounted } from "@/lib/hooks/useIsMounted";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useIsMounted();
 
-  useEffect(() => setMounted(true), []);
-
-  // Avoid hydration mismatch — render a placeholder until mounted
+  // Render a sized placeholder until hydrated to avoid layout shift
   if (!mounted) {
-    return (
-      <div className="w-[42px] h-[42px] rounded-full bg-footer-social-bg" />
-    );
+    return <div className="w-[42px] h-[42px] rounded-full bg-footer-social-bg" />;
   }
 
   const isDark = resolvedTheme === "dark";
