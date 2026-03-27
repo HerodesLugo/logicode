@@ -9,8 +9,8 @@ export const variantClasses: Record<Variant, string> = {
 
 export const sizeClasses: Record<Size, string> = {
   sm: "px-4 py-2 text-sm rounded-xl",
-  md: "px-8 py-4 text-base rounded-[20px]",
-  lg: "px-10 py-4 text-base rounded-[20px]",
+  md: "px-8 py-4 text-sm rounded-[20px]",
+  lg: "px-10 py-5 text-sm rounded-[20px]",
 };
 
 export const baseClasses =

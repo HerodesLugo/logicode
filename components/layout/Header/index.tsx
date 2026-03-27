@@ -10,6 +10,7 @@ import {
   ChevronDownIcon,
   MenuIcon,
 } from "@/components/icons";
+import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageModal } from "./LanguageModal";
@@ -39,15 +40,13 @@ export function Header() {
                 </span>
               </div>
 
-              <button className="flex items-center gap-2 bg-btn-secondary text-white px-8 py-4 rounded-[20px] text-sm font-medium hover:opacity-90 transition-colors">
-                <UserIcon className="w-4 h-4" />
+              <Button variant="secondary" iconStart={<UserIcon className="w-4 h-4" />}>
                 Login
-              </button>
+              </Button>
 
-              <button className="flex shrink-0 items-center gap-2 bg-accent text-white dark:text-gray-950 px-8 py-4 rounded-[20px] text-sm font-medium hover:opacity-90 transition-colors">
+              <Button variant="primary" icon={<ArrowRightIcon className="w-4 h-4" />} className="shrink-0">
                 Request Demo
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
+              </Button>
 
               <button
                 onClick={() => setIsLanguageModalOpen(true)}

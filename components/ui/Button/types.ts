@@ -7,5 +7,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
   href?: string;
+  /** Icon rendered after the label (right side) */
   icon?: React.ReactNode;
+  /** Icon rendered before the label (left side) */
+  iconStart?: React.ReactNode;
 }
