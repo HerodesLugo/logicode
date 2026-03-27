@@ -81,7 +81,7 @@ const darkPalette: SlideColors = {
   gradientColor: "#060a0f",
   primaryBtnBg: "#28f06a",
   primaryBtnColor: "#06120a",
-  secondaryBtnBg: "#0e1416",
+  secondaryBtnBg: "#2B2B2B",
   secondaryBtnColor: "#e6f9ef",
   dotActive: "#28f06a",
   dotInactive: "rgba(40,240,106,0.3)",
@@ -223,7 +223,7 @@ export function HeroSection() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row flex-wrap w-full gap-4 mt-4 md:mt-2">
             <button
-              className="w-full sm:w-auto h-14 flex flex-row-reverse items-center gap-2 px-8 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
+              className="w-full sm:w-auto h-14 justify-center flex flex-row-reverse items-center gap-2 px-8 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
               style={{
                 backgroundColor: c.primaryBtnBg,
                 color: c.primaryBtnColor,
@@ -234,7 +234,7 @@ export function HeroSection() {
               {slide.primaryBtn}
             </button>
             <button
-              className="w-full sm:w-auto flex-row-reverse px-8 h-14   items-center gap-2 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90 flex"
+              className="w-full sm:w-auto flex-row-reverse px-8 h-14 justify-center  items-center gap-2 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90 flex"
               style={{
                 backgroundColor: c.secondaryBtnBg,
                 color: c.secondaryBtnColor,

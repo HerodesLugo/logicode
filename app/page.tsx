@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-col flex-1">
+      <main className="flex overflow-hidden flex-col flex-1  ">
         <HeroSection />
         <FadeUp>
           <GlobalThreatSection />
@@ -42,7 +42,7 @@ export default function Home() {
         <FadeUp>
           <UseCasesSection />
         </FadeUp>
-        <FadeUp delay={80}>
+        <FadeUp className="max-md:hidden" delay={80}>
           <PartnersMarquee />
         </FadeUp>
       </main>

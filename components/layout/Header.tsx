@@ -69,7 +69,7 @@ export function Header() {
               </button>
 
               {/* Request Demo */}
-              <button className="flex items-center gap-2 bg-accent text-white dark:text-gray-950 px-8 py-4 rounded-[20px] text-sm font-medium hover:opacity-90 transition-colors">
+              <button className="flex shrink-0 items-center gap-2 bg-accent text-white dark:text-gray-950 px-8 py-4 rounded-[20px] text-sm font-medium hover:opacity-90 transition-colors">
                 Request Demo
                 <ArrowRightIcon className="w-4 h-4" />
               </button>
