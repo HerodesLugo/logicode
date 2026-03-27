@@ -2,7 +2,11 @@
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
-import { HERO_SLIDE_1_IMG, HERO_SLIDE_2_IMG, HERO_SLIDE_3_IMG } from "@/lib/assets";
+import {
+  HERO_SLIDE_1_IMG,
+  HERO_SLIDE_2_IMG,
+  HERO_SLIDE_3_IMG,
+} from "@/lib/assets";
 
 const heroSlideImg = HERO_SLIDE_1_IMG;
 const heroSlide2Img = HERO_SLIDE_2_IMG;
@@ -11,7 +15,11 @@ const heroSlide3Img = HERO_SLIDE_3_IMG;
 /* ── Hydration-safe mounted check (avoids setState-in-effect lint) ── */
 const emptySubscribe = () => () => {};
 function useIsMounted() {
-  return useSyncExternalStore(emptySubscribe, () => true, () => false);
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
 }
 
 type SlideColors = {
@@ -122,10 +130,7 @@ export function HeroSection() {
   const { resolvedTheme } = useTheme();
   const mounted = useIsMounted();
 
-  const next = useCallback(
-    () => setActive((p) => (p + 1) % slides.length),
-    []
-  );
+  const next = useCallback(() => setActive((p) => (p + 1) % slides.length), []);
 
   useEffect(() => {
     const id = setInterval(next, 6000);
@@ -134,16 +139,16 @@ export function HeroSection() {
 
   const slide = slides[active];
   // On the server (not mounted), always use lightColors to match SSR output
-  const c = mounted && resolvedTheme === "dark" ? slide.darkColors : slide.lightColors;
+  const c =
+    mounted && resolvedTheme === "dark" ? slide.darkColors : slide.lightColors;
 
   return (
     <section
-      className="relative w-full h-dvh md:h-[620px] lg:h-[691px] overflow-hidden transition-colors duration-700"
+      className="relative w-full h-dvh  overflow-hidden transition-colors duration-700 "
       style={{ backgroundColor: c.bg }}
     >
-      {/* ── Background image (right half) ──────────────────── */}
       <div
-        className="absolute inset-0 md:left-auto md:right-0 w-full lg:w-[70%] pointer-events-none"
+        className="absolute  inset-0 md:left-auto md:right-0 w-full lg:w-[70%] pointer-events-none"
         aria-hidden="true"
       >
         {slides.map((s, i) => (
@@ -179,8 +184,8 @@ export function HeroSection() {
         <div className="flex flex-col gap-4 md:gap-5 max-w-[565px] mt-4 md:mt-0">
           {/* Tag */}
           <span
-            className="inline-flex self-start px-4 py-1.5 rounded-full text-xs font-semibold font-display border border-current"
-            style={{ backgroundColor: "transparent", color: c.tagColor }}
+            className="inline-flex self-start px-4 py-1.5 rounded-full text-xs font-semibold font-display border border-current bg-[rgba(32,_166,_76,_0.10)]"
+            style={{ color: c.tagColor }}
           >
             {slide.tag}
           </span>
@@ -189,7 +194,12 @@ export function HeroSection() {
           <div className="flex flex-col -mt-1 md:mt-0">
             <span
               className="font-display text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] tracking-[-0.045em] font-bold md:font-normal text-white md:text-inherit"
-              style={{ color: resolvedTheme === "dark" || !mounted ? undefined : c.headingRegularColor }}
+              style={{
+                color:
+                  resolvedTheme === "dark" || !mounted
+                    ? undefined
+                    : c.headingRegularColor,
+              }}
             >
               {slide.headingRegular}
             </span>
@@ -212,22 +222,55 @@ export function HeroSection() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row flex-wrap w-full gap-4 mt-4 md:mt-2">
             <button
-              className="w-full sm:w-auto px-8 py-4 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
+              className="w-full sm:w-auto h-14 flex flex-row-reverse items-center gap-2 px-8 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
               style={{
                 backgroundColor: c.primaryBtnBg,
                 color: c.primaryBtnColor,
               }}
             >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.55539 5.08331L11.3332 7.99998M11.3332 7.99998L8.55539 10.9166M11.3332 7.99998L4.6665 7.99998"
+                  stroke="currentColor"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
               {slide.primaryBtn}
             </button>
             <button
-              className="w-full sm:w-auto px-8 py-4 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90"
+              className="w-full sm:w-auto flex-row-reverse px-8 h-14   items-center gap-2 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90 flex"
               style={{
                 backgroundColor: c.secondaryBtnBg,
                 color: c.secondaryBtnColor,
               }}
             >
+             
               {slide.secondaryBtn}
+              
+               <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="13"
+                viewBox="0 0 15 13"
+                fill="none"
+              >
+                <path
+                  d="M10.4118 5.4H13.0889C13.4816 5.4 13.8 5.71837 13.8 6.11111V10.2654C13.8 11.1129 13.1129 11.8 12.2654 11.8H2.6M1 1.71111V10.4C1 11.1732 1.6268 11.8 2.4 11.8C3.1732 11.8 3.8 11.1732 3.8 10.4V6.11111C3.8 5.71838 4.11837 5.4 4.51111 5.4H12.3778V3.71895C12.3778 3.32622 12.0594 3.00784 11.6667 3.00784H6.9817L5.89507 1.32532C5.76408 1.1225 5.53914 1 5.29771 1H1.71111C1.31838 1 1 1.31838 1 1.71111Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -243,8 +286,7 @@ export function HeroSection() {
             className="h-[6px] rounded-[3px] transition-all duration-300"
             style={{
               width: 55,
-              backgroundColor:
-                i === active ? c.dotActive : c.dotInactive,
+              backgroundColor: i === active ? c.dotActive : c.dotInactive,
             }}
           />
         ))}
