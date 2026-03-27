@@ -1,54 +1,60 @@
-import { GLOBE_IMG } from "@/lib/assets";
-
-const globeImg = GLOBE_IMG;
+import { GLOBE_IMG, GLOBE_DASHED_LINE } from "@/lib/assets";
 
 export function GlobalThreatSection() {
   return (
-    <section className="relative w-full bg-brand-light-bg pt-28 overflow-hidden">
-      <div className="section-container relative flex flex-col items-center justify-center min-h-[700px] lg:min-h-[786px] py-20">
-        {/* ── Globe background ──────────────────────────────── */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          {/* Globe image — replace with final asset */}
+    <section className="relative w-full bg-brand-light-bg overflow-hidden pt-28">
+      {/* Aspect-ratio container matching the Figma frame (1024 × 779) */}
+      <div className="relative w-full max-w-[1200px] mx-auto aspect-[1024/779]">
+        {/* ── Globe background (fills container, 64 % opacity) ── */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.64]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={globeImg}
+            src={GLOBE_IMG}
             alt=""
-            className="w-[1028px] max-w-none h-[783px] object-cover mix-blend-luminosity opacity-30"
+            className="w-full h-full object-cover"
           />
         </div>
 
-        {/* ── Centered text content ─────────────────────────── */}
-        <div className="relative z-10 flex flex-col items-center text-center gap-4 max-w-[800px]">
-          <span className="text-accent text-sm font-medium">Global Reach</span>
-          <h2 className="text-heading text-[32px] font-bold leading-tight">
+        {/* ── Centered text content (top ~9.8 % from top) ──────── */}
+        <div className="absolute inset-x-0 top-[9.8%] z-10 flex flex-col items-center text-center gap-3 lg:gap-[22px] px-6">
+          <span className="text-accent text-sm lg:text-base font-medium">
+            Global Reach
+          </span>
+          <h2 className="text-heading text-[28px] lg:text-[44px] font-bold leading-tight">
             Global cyber threat intelligence.
           </h2>
-          <p className="text-body text-sm leading-relaxed max-w-[609px]">
+          <p className="text-body text-sm lg:text-base leading-relaxed max-w-[837px]">
             Continuous monitoring and event correlation across regions, providing
             real-time support to SOC, DFIR, and intelligence teams operating in
             distributed environments.
           </p>
         </div>
 
-        {/* ── Pin + label + quote (below center) ────────────── */}
-        <div className="relative z-10 flex flex-col items-center mt-8 gap-4">
-          {/* Dashed line + pin */}
-          <div className="flex flex-col items-center">
-            <div className="w-px h-16 border-l border-dashed border-accent" />
-            <div className="w-2 h-2 rounded-full bg-accent" />
-          </div>
-
-          {/* Location badge */}
-          <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-accent bg-tag-bg text-accent text-xs font-medium">
-            United States of America
-          </span>
-
-          {/* Quote */}
-          <blockquote className="text-body text-base leading-relaxed max-w-[400px] text-center mt-4">
-            &ldquo;Logicode tools are like a powerful lens, clarifying the
-            cybersecurity landscape.&rdquo;
-          </blockquote>
+        {/* ── Pin marker (green dot on Spain) ───────────────────── */}
+        <div className="absolute z-10 w-[1.2%] h-[1.6%] left-[40.3%] top-[64.6%]">
+          <div className="w-full h-full rounded-full bg-accent" />
         </div>
+
+        {/* ── Dashed line from pin to badge ──────────────────────── */}
+        <div className="absolute z-10 left-[27.5%] top-[66.2%] w-[12.7%] h-[17.5%]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={GLOBE_DASHED_LINE}
+            alt=""
+            className="w-full h-full"
+          />
+        </div>
+
+        {/* ── SPAIN badge ───────────────────────────────────────── */}
+        <div className="absolute z-10 left-[23.8%] top-[83.8%] inline-flex items-center px-3 py-1.5 rounded-full border border-accent bg-[rgba(40,240,106,0.08)] text-accent text-xs lg:text-base font-medium">
+          SPAIN
+        </div>
+
+        {/* ── Quote ─────────────────────────────────────────────── */}
+        <blockquote className="absolute z-10 left-[12.3%] top-[90.4%] text-body text-sm lg:text-[22px] leading-relaxed max-w-[55%]">
+          &ldquo;Logicode tools are like a powerful lens, clarifying the
+          cybersecurity landscape.&rdquo;
+        </blockquote>
       </div>
     </section>
   );

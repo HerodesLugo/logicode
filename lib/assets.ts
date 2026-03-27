@@ -31,7 +31,13 @@ export const HERO_SLIDE_3_IMG =
 // ─── Global Threat Section ─────────────────────────────────────────────────
 
 export const GLOBE_IMG =
-  "https://www.figma.com/api/mcp/asset/9eed95be-4327-4b1e-bd06-7b17ab1838ee";
+  "https://www.figma.com/api/mcp/asset/a9de8271-b884-4e30-90b7-e1c5d15dbad3";
+
+export const GLOBE_PIN_MARKER =
+  "https://www.figma.com/api/mcp/asset/5cbcc05f-d947-4fd9-baa9-0397d027a403";
+
+export const GLOBE_DASHED_LINE =
+  "https://www.figma.com/api/mcp/asset/52cdebc7-d53f-4362-8aed-d6633b0fc143";
 
 // ─── Partners Marquee ──────────────────────────────────────────────────────
 
