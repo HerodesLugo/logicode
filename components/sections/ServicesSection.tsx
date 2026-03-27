@@ -1,13 +1,3 @@
-import Image from "next/image";
-import {
-  SERVICE_ICON_DARK_INCIDENTS,
-  SERVICE_ICON_DARK_NOTICES,
-  SERVICE_ICON_DARK_SOLUTIONS,
-  SERVICE_ICON_DARK_REPORTS,
-  SERVICE_ICON_DARK_GUIDES,
-  SERVICE_ICON_DARK_NATIONAL_SOC,
-  SERVICE_ICON_DARK_TRAINING,
-} from "@/lib/assets";
 import {
   IncidentsIcon,
   NoticesIcon,
@@ -23,16 +13,24 @@ type SvgIconProps = ComponentProps<"svg">;
 
 const services: {
   name: string;
-  darkIcon: string;
+  darkIcon: ComponentType<SvgIconProps>;
   LightIcon: ComponentType<SvgIconProps>;
 }[] = [
-  { name: "Incidents",            darkIcon: SERVICE_ICON_DARK_INCIDENTS,    LightIcon: IncidentsIcon },
-  { name: "Notices\nand Alerts",  darkIcon: SERVICE_ICON_DARK_NOTICES,      LightIcon: NoticesIcon },
-  { name: "Solutions",            darkIcon: SERVICE_ICON_DARK_SOLUTIONS,    LightIcon: SolutionsIcon },
-  { name: "Reports",             darkIcon: SERVICE_ICON_DARK_REPORTS,      LightIcon: ReportsIcon },
-  { name: "Guides",              darkIcon: SERVICE_ICON_DARK_GUIDES,       LightIcon: GuidesIcon },
-  { name: "National SOC\nNetwork", darkIcon: SERVICE_ICON_DARK_NATIONAL_SOC, LightIcon: NationalSocIcon },
-  { name: "Training",            darkIcon: SERVICE_ICON_DARK_TRAINING,     LightIcon: TrainingIcon },
+  { name: "Incidents", darkIcon: IncidentsIcon, LightIcon: IncidentsIcon },
+  {
+    name: "Notices\nand Alerts",
+    darkIcon: NoticesIcon,
+    LightIcon: NoticesIcon,
+  },
+  { name: "Solutions", darkIcon: SolutionsIcon, LightIcon: SolutionsIcon },
+  { name: "Reports", darkIcon: ReportsIcon, LightIcon: ReportsIcon },
+  { name: "Guides", darkIcon: GuidesIcon, LightIcon: GuidesIcon },
+  {
+    name: "National SOC\nNetwork",
+    darkIcon: NationalSocIcon,
+    LightIcon: NationalSocIcon,
+  },
+  { name: "Training", darkIcon: TrainingIcon, LightIcon: TrainingIcon },
 ];
 
 export function ServicesSection() {
@@ -48,14 +46,9 @@ export function ServicesSection() {
               {/* Light mode: icon component */}
               <svc.LightIcon className="w-[70px] h-[70px] text-brand dark:hidden" />
               {/* Dark mode: Figma asset icon */}
-              <Image
-                src={svc.darkIcon}
-                alt={svc.name.replace("\n", " ")}
-                width={70}
-                height={70}
-                unoptimized
-                className="hidden dark:block w-[70px] h-[70px] object-contain"
-              />
+              <svc.LightIcon className="w-[70px] h-[70px] text-brand dark:hidden" />
+              <svc.darkIcon className="hidden dark:block w-[70px] h-[70px] object-contain" />
+
               <span className="text-heading text-sm text-center whitespace-pre-line leading-tight">
                 {svc.name}
               </span>

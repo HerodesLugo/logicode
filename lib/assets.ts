@@ -64,28 +64,7 @@ export const PARTNER_LOGO_RED_SOC =
 export const PARTNER_LOGO_EGC =
   "https://www.figma.com/api/mcp/asset/ac95b8eb-c797-4934-aa61-d5bece7d40ad";
 
-// ─── Services Section (dark mode icons) ───────────────────────────────────
 
-export const SERVICE_ICON_DARK_INCIDENTS =
-  "https://www.figma.com/api/mcp/asset/541e1647-2745-4691-9c32-4c614e837708";
-
-export const SERVICE_ICON_DARK_NOTICES =
-  "https://www.figma.com/api/mcp/asset/01cfe19a-3334-405d-8f5a-1aeec509db9d";
-
-export const SERVICE_ICON_DARK_SOLUTIONS =
-  "https://www.figma.com/api/mcp/asset/95e9a684-c850-469c-afb0-1d918790c8b5";
-
-export const SERVICE_ICON_DARK_REPORTS =
-  "https://www.figma.com/api/mcp/asset/70867c77-6708-4b09-b5a8-645b1bcf1f52";
-
-export const SERVICE_ICON_DARK_GUIDES =
-  "https://www.figma.com/api/mcp/asset/98d6a98e-0856-4328-9088-71bccb9d47b3";
-
-export const SERVICE_ICON_DARK_NATIONAL_SOC =
-  "https://www.figma.com/api/mcp/asset/e1d7d827-c9e8-44da-8946-afeedaa0b2ee";
-
-export const SERVICE_ICON_DARK_TRAINING =
-  "https://www.figma.com/api/mcp/asset/1067a7f2-51b2-4efc-82c6-fd3bea97c2c0";
 
 // ─── Solutions Section ─────────────────────────────────────────────────────
 
