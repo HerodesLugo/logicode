@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex overflow-hidden flex-col flex-1  ">
+      <main className="flex flex-col flex-1 overflow-hidden">
         <HeroSection />
         <FadeUp>
           <GlobalThreatSection />
