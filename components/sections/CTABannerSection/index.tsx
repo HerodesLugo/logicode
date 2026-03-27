@@ -1,16 +1,14 @@
 import Image from "next/image";
 import { CTA_BG_IMG } from "@/lib/assets";
 
-const bgImage = CTA_BG_IMG;
-
 export function CTABannerSection() {
   return (
     <section className="w-full bg-brand-light-bg py-10 lg:py-14">
       <div className="section-container">
         <div className="relative rounded-[25px] overflow-hidden min-h-[309px] max-md:h-[617px] max-md:p-5">
-          {/* ── Background image + overlay ──────────────── */}
+          {/* Background image */}
           <Image
-            src={bgImage}
+            src={CTA_BG_IMG}
             alt=""
             fill
             unoptimized
@@ -19,11 +17,10 @@ export function CTABannerSection() {
           />
           <div className="absolute inset-0 bg-[rgba(49,70,73,0.22)]" />
 
-          {/* ── Content container ────────────────────────────── */}
-          
-          <div className="relative z-10 flex flex-col lg:flex-row  h-full justify-between gap-10 lg:gap-6 px-6 py-10 lg:p-11 min-h-[480px] lg:min-h-[309px]">
+          {/* Content */}
+          <div className="relative z-10 flex flex-col lg:flex-row h-full justify-between gap-10 lg:gap-6 px-6 py-10 lg:p-11 min-h-[480px] lg:min-h-[309px]">
             {/* Left text */}
-            <div className="flex flex-col  justify-start gap-4 lg:w-[55%]">
+            <div className="flex flex-col justify-start gap-4 lg:w-[55%]">
               <span className="text-[#28f06a] text-[13px] md:text-sm font-bold">
                 Explore the Platform
               </span>
@@ -48,9 +45,7 @@ export function CTABannerSection() {
                 Request a Demo
               </button>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

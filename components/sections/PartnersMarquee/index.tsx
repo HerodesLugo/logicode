@@ -1,32 +1,18 @@
 import Image from "next/image";
-import {
-  PARTNER_LOGO_1,
-  PARTNER_LOGO_CSIRT,
-  PARTNER_LOGO_FIRST,
-  PARTNER_LOGO_TF_CSIRT,
-  PARTNER_LOGO_5,
-  PARTNER_LOGO_RED_SOC,
-  PARTNER_LOGO_EGC,
-} from "@/lib/assets";
-
-const partnerLogos = [
-  { src: PARTNER_LOGO_1, alt: "Partner 1", width: 82 },
-  { src: PARTNER_LOGO_CSIRT, alt: "CSIRT.es", width: 82 },
-  { src: PARTNER_LOGO_FIRST, alt: "FIRST", width: 82 },
-  { src: PARTNER_LOGO_TF_CSIRT, alt: "TF-CSIRT", width: 82 },
-  { src: PARTNER_LOGO_5, alt: "Partner 5", width: 82 },
-  { src: PARTNER_LOGO_RED_SOC, alt: "Red Nacional de SOC", width: 82 },
-  { src: PARTNER_LOGO_EGC, alt: "EGC group", width: 169 },
-];
+import { partnerLogos } from "./data";
 
 export function PartnersMarquee() {
-  /* Duplicate the set 3× so there's always enough content visible for the marquee */
-  const marqueeLogos = [...partnerLogos, ...partnerLogos, ...partnerLogos];
+  /* Duplicate the set 3× so there's always enough content visible */
+  const marqueeLogos = [
+    ...partnerLogos,
+    ...partnerLogos,
+    ...partnerLogos,
+  ];
 
   return (
     <section className="w-full overflow-hidden py-10 md:py-24 bg-brand-light-bg">
       <div className="section-container">
-        {/* Mobile Grid Layout */}
+        {/* Mobile — static grid */}
         <div className="grid grid-cols-3 gap-x-8 gap-y-12 items-center justify-items-center md:hidden">
           {partnerLogos.slice(0, 6).map((logo, i) => (
             <Image
@@ -39,7 +25,7 @@ export function PartnersMarquee() {
               className="h-[36px] sm:h-[42px] w-auto object-contain dark:opacity-100 opacity-70 grayscale dark:brightness-0 dark:invert"
             />
           ))}
-          {/* EGC logo centered at the bottom on mobile */}
+          {/* EGC logo centered at the bottom */}
           <div className="col-span-2 sm:col-span-3 flex justify-center pt-4">
             <Image
               src={partnerLogos[6].src}
@@ -52,7 +38,7 @@ export function PartnersMarquee() {
           </div>
         </div>
 
-        {/* Desktop Marquee Layout */}
+        {/* Desktop — scrolling marquee */}
         <div className="max-md:hidden! md:block marquee-track">
           {marqueeLogos.map((logo, i) => (
             <Image

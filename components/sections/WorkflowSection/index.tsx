@@ -1,68 +1,10 @@
-type WorkflowStep = {
-  number: number;
-  title: string;
-  description: string;
-};
-
-type Metric = {
-  value: string;
-  label: string;
-  description: string;
-};
-
-const steps: WorkflowStep[] = [
-  {
-    number: 1,
-    title: "Collect and structure",
-    description:
-      "Integrate endpoint data, network traffic, security logs, and cloud events, structuring them into a unified security data model.",
-  },
-  {
-    number: 2,
-    title: "Correlate and prioritize",
-    description:
-      "Use machine learning to correlate data, prioritize alerts, and identify potential threats based on risk scores and behavioral patterns.",
-  },
-  {
-    number: 3,
-    title: "Visualize attack vectors",
-    description:
-      "Visualize threat actor movements across systems to understand the scope of the incident and identify compromised assets.",
-  },
-  {
-    number: 4,
-    title: "Generate actionable reports",
-    description:
-      "Generate detailed reports with clear evidence, risk assessments, and recommended actions for remediation.",
-  },
-];
-
-const metrics: Metric[] = [
-  {
-    value: "5.2x",
-    label: "Faster threat detection per incident",
-    description:
-      "Analysts identify and respond to threats more quickly by automating data correlation and visualization.",
-  },
-  {
-    value: "31%",
-    label: "Decrease in alert fatigue",
-    description:
-      "Machine learning algorithms filter out false positives, allowing analysts to focus on genuine threats and reduce alert fatigue.",
-  },
-  {
-    value: "24/7",
-    label: "Continuous monitoring",
-    description:
-      "Real-time monitoring and analysis ensure continuous protection, enabling rapid response to emerging threats and minimizing potential damage.",
-  },
-];
+import { steps, metrics } from "./data";
 
 export function WorkflowSection() {
   return (
     <section className="w-full bg-brand-light-bg py-20 lg:py-[84px]">
       <div className="section-container flex flex-col gap-10">
-        {/* ── Section header ──────────────────────────────── */}
+        {/* ── Section header ── */}
         <div className="flex flex-col gap-4 max-w-[760px]">
           <span className="text-accent text-sm font-medium">
             Cybersecurity Workflow
@@ -77,11 +19,10 @@ export function WorkflowSection() {
           </p>
         </div>
 
-        {/* ── Two-column layout ───────────────────────────── */}
+        {/* ── Two-column layout ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left card: 4-step process */}
           <div className="bg-card-bg rounded-[20px] p-6 md:p-8 flex flex-col gap-10 md:gap-[60px]">
-            {/* Card header */}
             <div className="flex flex-col gap-3">
               <h3 className="font-display font-semibold text-lg md:text-xl text-accent">
                 Threat landscape assessment
@@ -91,17 +32,17 @@ export function WorkflowSection() {
               </p>
             </div>
 
-            {/* Steps */}
-            <div className="flex flex-col gap-8 md:gap-8">
+            <div className="flex flex-col gap-8">
               {steps.map((step) => (
-                <div key={step.number} className="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-[18px]">
-                  {/* Number badge */}
+                <div
+                  key={step.number}
+                  className="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-[18px]"
+                >
                   <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-[14px] md:rounded-[20px] bg-tag-bg flex items-center justify-center">
                     <span className="text-accent text-xl md:text-2xl font-normal">
                       {step.number}
                     </span>
                   </div>
-                  {/* Text */}
                   <div className="flex flex-col gap-1.5 md:gap-2 pt-0.5 md:pt-1">
                     <span className="text-heading text-base md:text-lg font-bold leading-none">
                       {step.title}
@@ -117,7 +58,6 @@ export function WorkflowSection() {
 
           {/* Right card: metrics */}
           <div className="bg-card-bg rounded-[20px] p-6 md:p-8 flex flex-col justify-between gap-8">
-            {/* Card header */}
             <div className="flex flex-col gap-4">
               <h3 className="font-display font-semibold text-xl text-accent">
                 Operational impact
@@ -129,7 +69,6 @@ export function WorkflowSection() {
               </p>
             </div>
 
-            {/* Metric rows */}
             <div className="flex flex-col gap-8">
               {metrics.map((metric) => (
                 <div key={metric.value} className="flex flex-col gap-1">

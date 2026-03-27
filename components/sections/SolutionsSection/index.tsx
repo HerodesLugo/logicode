@@ -1,36 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { SOLUTIONS_GARBO_LOGO } from "@/lib/assets";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
-
-const garboLogo = SOLUTIONS_GARBO_LOGO;
-
-type Solution = {
-  logo: string;
-  description: string;
-};
-
-const solutions: Solution[] = [
-  {
-    logo: garboLogo,
-    description: "It is the first European high-performance ARM-on-ARM mobile virtualization platform. It allows the creation of thousands of virtual devices with full control for critical security, cyber intelligence, and defense tasks.",
-  },
-  {
-    logo: garboLogo,
-    description: "It is the first European high-performance ARM-on-ARM mobile virtualization platform. It allows the creation of thousands of virtual devices with full control for critical security, cyber intelligence, and defense tasks.",
-  },
-  {
-    logo: garboLogo,
-    description: "It is the first European high-performance ARM-on-ARM mobile virtualization platform. It allows the creation of thousands of virtual devices with full control for critical security, cyber intelligence, and defense tasks.",
-  },
-];
+import { solutions } from "./data";
 
 export function SolutionsSection() {
   return (
     <section className="w-full bg-brand-light-bg py-10 lg:py-14 overflow-hidden">
       <div className="section-container flex flex-col gap-8">
-        {/* ── Section header ──────────────────────────────── */}
+        {/* ── Section header ── */}
         <div className="flex flex-col gap-2">
           <span className="text-accent text-sm font-medium">
             Investigation workflow
@@ -40,9 +18,9 @@ export function SolutionsSection() {
           </h2>
         </div>
 
-        {/* ── Carousel ────────────────────────────────────── */}
+        {/* ── Carousel ── */}
         <div className="relative w-full">
-          {/* Left arrow (hidden mobile) */}
+          {/* Left arrow */}
           <button
             className="absolute -left-6 lg:-left-16 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Previous"
@@ -50,7 +28,7 @@ export function SolutionsSection() {
             <ChevronLeftIcon className="w-8 h-8 text-accent" />
           </button>
 
-          {/* Cards container - Snap carousel mobile, scrollable container */}
+          {/* Cards */}
           <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
             {solutions.map((sol, i) => (
               <div
@@ -78,7 +56,7 @@ export function SolutionsSection() {
             ))}
           </div>
 
-          {/* Right arrow (hidden mobile) */}
+          {/* Right arrow */}
           <button
             className="absolute -right-6 lg:-right-16 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Next"
