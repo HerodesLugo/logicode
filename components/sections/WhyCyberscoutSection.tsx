@@ -50,7 +50,7 @@ const cards: FeatureCard[] = [
 
 export function WhyCyberscoutSection() {
   return (
-    <section className="w-full bg-card-bg py-20 lg:py-[84px] overflow-hidden">
+    <section className="w-full bg-footer-bg py-20 lg:py-[84px] overflow-hidden">
       <div className="section-container flex flex-col gap-10">
         {/* ── Section header ──────────────────────────────── */}
         <div className="flex flex-col gap-4 max-w-[760px]">

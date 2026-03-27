@@ -1,15 +1,39 @@
-import { GLOBE_IMG, GLOBE_DASHED_LINE } from "@/lib/assets";
+"use client";
+
+import { useSyncExternalStore } from "react";
+import { useTheme } from "next-themes";
+import { GLOBE_IMG, GLOBE_IMG_DARK, GLOBE_DASHED_LINE } from "@/lib/assets";
+
+/* ── Hydration-safe mounted check (same pattern as HeroSection) ── */
+const emptySubscribe = () => () => {};
+function useIsMounted() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
+}
 
 export function GlobalThreatSection() {
+  const { resolvedTheme } = useTheme();
+  const mounted = useIsMounted();
+
+  const isDark = mounted && resolvedTheme === "dark";
+  const globeSrc = isDark ? GLOBE_IMG_DARK : GLOBE_IMG;
+
   return (
-    <section className="relative w-full bg-brand-light-bg overflow-hidden pt-28">
+    <section className="relative w-full bg-section-bg overflow-hidden pt-28 transition-colors duration-500">
       {/* Aspect-ratio container matching the Figma frame (1024 × 779) */}
       <div className="relative w-full max-w-[1200px] mx-auto aspect-[1024/779]">
-        {/* ── Globe background (fills container, 64 % opacity) ── */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.64]">
+        {/* ── Globe background (fills container) ── */}
+        <div
+          className={`absolute inset-0 pointer-events-none transition-opacity duration-700 ${
+            isDark ? "opacity-100" : "opacity-[0.64]"
+          }`}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={GLOBE_IMG}
+            src={globeSrc}
             alt=""
             className="w-full h-full object-cover"
           />
@@ -51,7 +75,11 @@ export function GlobalThreatSection() {
         </div>
 
         {/* ── Quote ─────────────────────────────────────────────── */}
-        <blockquote className="absolute z-10 left-[12.3%] top-[90.4%] text-body text-sm lg:text-[22px] leading-relaxed max-w-[55%]">
+        <blockquote
+          className={`absolute z-10 left-[12.3%] top-[90.4%] text-sm lg:text-[22px] leading-relaxed max-w-[55%] ${
+            isDark ? "text-white" : "text-body"
+          }`}
+        >
           &ldquo;Logicode tools are like a powerful lens, clarifying the
           cybersecurity landscape.&rdquo;
         </blockquote>

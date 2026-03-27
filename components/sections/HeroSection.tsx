@@ -145,7 +145,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-dvh  overflow-hidden transition-colors duration-700 "
+      className="relative w-full h-dvh     overflow-hidden transition-colors duration-700 "
       style={{ backgroundColor: c.bg }}
     >
       <div

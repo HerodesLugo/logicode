@@ -33,6 +33,8 @@ export const HERO_SLIDE_3_IMG =
 export const GLOBE_IMG =
   "https://www.figma.com/api/mcp/asset/a9de8271-b884-4e30-90b7-e1c5d15dbad3";
 
+export const GLOBE_IMG_DARK = "/globe-dark.png";
+
 export const GLOBE_PIN_MARKER =
   "https://www.figma.com/api/mcp/asset/5cbcc05f-d947-4fd9-baa9-0397d027a403";
 
