@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SOLUTIONS_GARBO_LOGO } from "@/lib/assets";
+import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
 const garboLogo = SOLUTIONS_GARBO_LOGO;
 
@@ -45,9 +46,7 @@ export function SolutionsSection() {
             className="absolute -left-6 md:-left-16 top-1/2 -translate-y-1/2 shrink-0 flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Previous"
           >
-            <svg className="w-8 h-8 text-accent dark:text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
+            <ChevronLeftIcon className="w-8 h-8 text-accent dark:text-body-muted" />
           </button>
 
           {/* Cards container */}
@@ -80,9 +79,7 @@ export function SolutionsSection() {
             className="absolute -right-6 md:-right-16 top-1/2 -translate-y-1/2 shrink-0 flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Next"
           >
-            <svg className="w-8 h-8 text-accent dark:text-body-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
+            <ChevronRightIcon className="w-8 h-8 text-accent dark:text-body-muted" />
           </button>
         </div>
       </div>

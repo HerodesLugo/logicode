@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ArrowUpIcon } from "@/components/icons";
 
 export function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,17 +31,7 @@ export function BackToTop() {
           : "opacity-0 translate-y-10 pointer-events-none"
       }`}
     >
-      <svg
-        className="w-6 h-6 text-white dark:text-gray-950"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 19V5M5 12l7-7 7 7" />
-      </svg>
+      <ArrowUpIcon className="w-6 h-6 text-white dark:text-gray-950" />
     </button>
   );
 }

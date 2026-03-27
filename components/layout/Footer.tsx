@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { FOOTER_LOGO_LIGHT, FOOTER_LOGO_DARK } from "@/lib/assets";
+import { TwitterXIcon, LinkedInIcon, GitHubIcon } from "@/components/icons";
 
 const logoLightUrl = FOOTER_LOGO_LIGHT;
 const logoDarkUrl = FOOTER_LOGO_DARK;
@@ -27,6 +28,12 @@ const navColumns: NavColumn[] = [
     heading: "Company",
     links: ["About Us", "Careers", "Partners", "Contact", "Press"],
   },
+];
+
+const socialLinks = [
+  { label: "Twitter", icon: TwitterXIcon },
+  { label: "LinkedIn", icon: LinkedInIcon },
+  { label: "GitHub", icon: GitHubIcon },
 ];
 
 export function Footer() {
@@ -61,36 +68,16 @@ export function Footer() {
             </p>
             {/* Social icons */}
             <div className="flex gap-4">
-              {/* Twitter/X */}
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="w-10 h-10 rounded-md flex items-center justify-center bg-footer-social-bg border border-footer-social-bdr hover:opacity-80 transition-colors"
-              >
-                <svg className="w-5 h-5 text-accent dark:text-footer-link" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M17.5 3.75 11.25 10.83 18.33 18.33h-3.33L10 12.5l-5 5.83H1.67L8.33 10 1.67 3.75h3.33L10 9.17l5-5.42z" />
-                </svg>
-              </a>
-              {/* LinkedIn */}
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="w-10 h-10 rounded-md flex items-center justify-center bg-footer-social-bg border border-footer-social-bdr hover:opacity-80 transition-colors"
-              >
-                <svg className="w-5 h-5 text-accent dark:text-footer-link" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M5 7h-3v10h3V7zM3.5 5.75a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5zM18 17h-3v-4.5c0-1.38-.56-2.5-2-2.5s-2 1.12-2 2.5V17H8V7h3v1.5c.57-.9 1.7-1.5 3-1.5 2.2 0 4 1.8 4 4.5V17z" />
-                </svg>
-              </a>
-              {/* GitHub */}
-              <a
-                href="#"
-                aria-label="GitHub"
-                className="w-10 h-10 rounded-md flex items-center justify-center bg-footer-social-bg border border-footer-social-bdr hover:opacity-80 transition-colors"
-              >
-                <svg className="w-5 h-5 text-accent dark:text-footer-link" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M10 2a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.32c-2.23.48-2.7-1.07-2.7-1.07-.37-.93-.9-1.18-.9-1.18-.73-.5.06-.49.06-.49.81.06 1.24.83 1.24.83.72 1.24 1.9.88 2.36.67.07-.52.28-.88.51-1.08-1.78-.2-3.65-.89-3.65-3.96 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.66 7.66 0 0 1 10 7.3a7.65 7.65 0 0 1 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.08-1.87 3.76-3.66 3.96.29.25.54.74.54 1.49v2.21c0 .21.15.46.55.38A8 8 0 0 0 10 2z" />
-                </svg>
-              </a>
+              {socialLinks.map(({ label, icon: Icon }) => (
+                <a
+                  key={label}
+                  href="#"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-md flex items-center justify-center bg-footer-social-bg border border-footer-social-bdr hover:opacity-80 transition-colors"
+                >
+                  <Icon className="w-5 h-5 text-accent dark:text-footer-link" />
+                </a>
+              ))}
             </div>
           </div>
 

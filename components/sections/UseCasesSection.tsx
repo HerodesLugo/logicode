@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { ArrowRightIcon } from "@/components/icons";
 
 type UseCase = {
   title: string;
@@ -34,17 +35,7 @@ const useCases: UseCase[] = [
   },
 ];
 
-const arrowIcon = (
-  <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-    <path
-      d="M3 8h10M9 4l4 4-4 4"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const arrowIcon = <ArrowRightIcon className="w-4 h-4" />;
 
 export function UseCasesSection() {
   return (

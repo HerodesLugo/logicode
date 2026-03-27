@@ -7,6 +7,7 @@ import {
   HERO_SLIDE_2_IMG,
   HERO_SLIDE_3_IMG,
 } from "@/lib/assets";
+import { HeroArrowIcon, FolderIcon } from "@/components/icons";
 
 const heroSlideImg = HERO_SLIDE_1_IMG;
 const heroSlide2Img = HERO_SLIDE_2_IMG;
@@ -228,21 +229,7 @@ export function HeroSection() {
                 color: c.primaryBtnColor,
               }}
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.55539 5.08331L11.3332 7.99998M11.3332 7.99998L8.55539 10.9166M11.3332 7.99998L4.6665 7.99998"
-                  stroke="currentColor"
-                  stroke-width="1.33333"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <HeroArrowIcon className="w-4 h-4" />
 
               {slide.primaryBtn}
             </button>
@@ -256,21 +243,7 @@ export function HeroSection() {
              
               {slide.secondaryBtn}
               
-               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="13"
-                viewBox="0 0 15 13"
-                fill="none"
-              >
-                <path
-                  d="M10.4118 5.4H13.0889C13.4816 5.4 13.8 5.71837 13.8 6.11111V10.2654C13.8 11.1129 13.1129 11.8 12.2654 11.8H2.6M1 1.71111V10.4C1 11.1732 1.6268 11.8 2.4 11.8C3.1732 11.8 3.8 11.1732 3.8 10.4V6.11111C3.8 5.71838 4.11837 5.4 4.51111 5.4H12.3778V3.71895C12.3778 3.32622 12.0594 3.00784 11.6667 3.00784H6.9817L5.89507 1.32532C5.76408 1.1225 5.53914 1 5.29771 1H1.71111C1.31838 1 1 1.31838 1 1.71111Z"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+               <FolderIcon className="w-[15px] h-[13px]" />
             </button>
           </div>
         </div>
