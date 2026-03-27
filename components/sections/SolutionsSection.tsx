@@ -55,21 +55,21 @@ export function SolutionsSection() {
             {solutions.map((sol, i) => (
               <div
                 key={i}
-                className="snap-center shrink-0 w-[88%] sm:w-[400px] lg:w-[367px] flex flex-col rounded-[25px] overflow-hidden bg-card-bg transition-opacity duration-300"
+                className="snap-center bg-gray-50 dark:bg-card-bg shrink-0 w-[88%] sm:w-[400px] lg:w-[367px] flex flex-col rounded-[25px] overflow-hidden transition-opacity duration-300"
               >
                 {/* Logo area */}
-                <div className="p-10 flex items-center justify-center min-h-[160px]">
+                <div className="p-10 bg-white dark:bg-card-bg-muted rounded-b-xl flex items-center justify-center min-h-[160px]">
                   <Image
                     src={sol.logo}
                     alt="Garbo Logo"
                     width={169}
                     height={56}
                     unoptimized
-                    className="h-[56px] w-auto object-contain dark:brightness-0 dark:invert transition-all duration-300"
+                    className="h-[56px] w-[20.625rem] object-contain dark:brightness-0 dark:invert transition-all duration-300"
                   />
                 </div>
                 {/* Description */}
-                <div className="px-10 pb-10 flex-1">
+                <div className="px-10 pb-10 flex-1 pt-5">
                   <p className="text-body dark:text-white text-[14px] max-md:text-xs leading-relaxed text-center opacity-90">
                     {sol.description}
                   </p>
