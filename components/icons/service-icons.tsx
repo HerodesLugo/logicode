@@ -36,9 +36,9 @@ export function NoticesIcon(props: IconProps) {
       <path
         d="M27.75 27.7498V14.6249M27.75 37.4782V37.5935M54 11.3437L54 44.1563C54 49.5928 49.5928 54 44.1562 54H11.3438C5.9072 54 1.5 49.5928 1.5 44.1563V11.3437C1.5 5.90717 5.9072 1.5 11.3438 1.5H44.1562C49.5928 1.5 54 5.90717 54 11.3437Z"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { SOLUTIONS_GARBO_LOGO } from "@/lib/assets";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
@@ -14,17 +13,21 @@ type Solution = {
 const solutions: Solution[] = [
   {
     logo: garboLogo,
-    description:
-      "It is the first European high-performance ARM-on-ARM mobile virtualization platform. It allows the creation of thousands of virtual devices with full control for critical security, cyber intelligence, and defense tasks.",
+    description: "It is the first European high-performance ARM-on-ARM mobile virtualization platform. It allows the creation of thousands of virtual devices with full control for critical security, cyber intelligence, and defense tasks.",
+  },
+  {
+    logo: garboLogo,
+    description: "It is the first European high-performance ARM-on-ARM mobile virtualization platform. It allows the creation of thousands of virtual devices with full control for critical security, cyber intelligence, and defense tasks.",
+  },
+  {
+    logo: garboLogo,
+    description: "It is the first European high-performance ARM-on-ARM mobile virtualization platform. It allows the creation of thousands of virtual devices with full control for critical security, cyber intelligence, and defense tasks.",
   },
 ];
 
 export function SolutionsSection() {
-  const [current, setCurrent] = useState(0);
-  const sol = solutions[current];
-
   return (
-    <section className="w-full bg-brand-light-bg py-10 lg:py-14">
+    <section className="w-full bg-brand-light-bg py-10 lg:py-14 overflow-hidden">
       <div className="section-container flex flex-col gap-8">
         {/* ── Section header ──────────────────────────────── */}
         <div className="flex flex-col gap-2">
@@ -38,48 +41,46 @@ export function SolutionsSection() {
 
         {/* ── Carousel ────────────────────────────────────── */}
         <div className="relative w-full">
-          {/* Left arrow */}
+          {/* Left arrow (hidden mobile) */}
           <button
-            onClick={() =>
-              setCurrent((p) => (p - 1 + solutions.length) % solutions.length)
-            }
-            className="absolute -left-6 md:-left-16 top-1/2 -translate-y-1/2 shrink-0 flex items-center justify-center hover:opacity-70 transition-colors z-10"
+            className="absolute -left-6 lg:-left-16 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Previous"
           >
-            <ChevronLeftIcon className="w-8 h-8 text-accent dark:text-body-muted" />
+            <ChevronLeftIcon className="w-8 h-8 text-accent" />
           </button>
 
-          {/* Cards container */}
-          <div className="flex gap-6 overflow-hidden w-full">
-            {/* Card */}
-            <div className="w-[367px] flex flex-col rounded-[20px] overflow-hidden">
-              {/* Logo area */}
-              <div className="bg-card-bg p-8 flex items-center justify-center min-h-[140px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={sol.logo}
-                  alt="Garbo Logo"
-                  className="h-[48px] w-auto object-contain dark:brightness-0 dark:invert transition-all duration-300"
-                />
+          {/* Cards container - Snap carousel mobile, scrollable container */}
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
+            {solutions.map((sol, i) => (
+              <div
+                key={i}
+                className="snap-center shrink-0 w-[88%] sm:w-[400px] lg:w-[367px] flex flex-col rounded-[25px] overflow-hidden bg-card-bg transition-opacity duration-300"
+              >
+                {/* Logo area */}
+                <div className="p-10 flex items-center justify-center min-h-[160px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={sol.logo}
+                    alt="Garbo Logo"
+                    className="h-[56px] w-auto object-contain dark:brightness-0 dark:invert transition-all duration-300"
+                  />
+                </div>
+                {/* Description */}
+                <div className="px-10 pb-10 flex-1">
+                  <p className="text-body dark:text-white text-[14px] max-md:text-xs leading-relaxed text-center opacity-90">
+                    {sol.description}
+                  </p>
+                </div>
               </div>
-              {/* Description */}
-              <div className="bg-card-bg-muted px-8 py-8 flex-1">
-                <p className="text-body text-[13px] leading-[1.6]">
-                  {sol.description}
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Right arrow */}
+          {/* Right arrow (hidden mobile) */}
           <button
-            onClick={() =>
-              setCurrent((p) => (p + 1) % solutions.length)
-            }
-            className="absolute -right-6 md:-right-16 top-1/2 -translate-y-1/2 shrink-0 flex items-center justify-center hover:opacity-70 transition-colors z-10"
+            className="absolute -right-6 lg:-right-16 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center hover:opacity-70 transition-colors z-10"
             aria-label="Next"
           >
-            <ChevronRightIcon className="w-8 h-8 text-accent dark:text-body-muted" />
+            <ChevronRightIcon className="w-8 h-8 text-accent" />
           </button>
         </div>
       </div>
