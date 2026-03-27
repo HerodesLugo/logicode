@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { WHY_CARD_IMG_1, WHY_CARD_IMG_2, WHY_CARD_IMG_3 } from "@/lib/assets";
 
@@ -74,12 +75,14 @@ export function WhyCyberscoutSection() {
               className="snap-center shrink-0 w-[85vw] md:w-auto flex flex-col rounded-[20px] overflow-hidden bg-card-bg-muted backdrop-blur-[15px]"
             >
               {/* Image */}
-              <div className="h-[230px] md:h-[272px] overflow-hidden shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative h-[230px] md:h-[272px] overflow-hidden shrink-0">
+                <Image
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  unoptimized
+                  sizes="(max-width: 768px) 85vw, (max-width: 1200px) 33vw, 453px"
+                  className="object-cover"
                 />
               </div>
 

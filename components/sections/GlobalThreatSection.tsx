@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { GLOBE_IMG, GLOBE_IMG_DARK } from "@/lib/assets";
 
 /* ── Hydration-safe mounted check (same pattern as HeroSection) ── */
@@ -33,11 +34,12 @@ export function GlobalThreatSection() {
             isDark ? "opacity-100" : "opacity-[0.64]"
           }`}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={globeSrc}
             alt=""
-            className="w-full h-full object-cover md:object-contain"
+            fill
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="object-cover md:object-contain"
           />
         </div>
 

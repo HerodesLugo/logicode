@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import {
   HERO_SLIDE_1_IMG,
   HERO_SLIDE_2_IMG,
@@ -153,12 +154,14 @@ export function HeroSection() {
         aria-hidden="true"
       >
         {slides.map((s, i) => (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
+          <Image
             key={s.id}
             src={s.image}
             alt=""
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            fill
+            unoptimized
+            sizes="(max-width: 1024px) 100vw, 70vw"
+            className={`object-cover transition-opacity duration-1000 ease-in-out ${
               i === active
                 ? "opacity-40 md:opacity-80 lg:opacity-100"
                 : "opacity-0"

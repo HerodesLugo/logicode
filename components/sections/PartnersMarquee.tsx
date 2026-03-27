@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   PARTNER_LOGO_1,
   PARTNER_LOGO_CSIRT,
@@ -28,37 +29,40 @@ export function PartnersMarquee() {
         {/* Mobile Grid Layout */}
         <div className="grid grid-cols-3 gap-x-8 gap-y-12 items-center justify-items-center md:hidden">
           {partnerLogos.slice(0, 6).map((logo, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-[36px] sm:h-[42px] object-contain dark:opacity-100 opacity-70 grayscale dark:brightness-0 dark:invert"
-              style={{ width: logo.width }}
+              width={logo.width}
+              height={42}
+              unoptimized
+              className="h-[36px] sm:h-[42px] w-auto object-contain dark:opacity-100 opacity-70 grayscale dark:brightness-0 dark:invert"
             />
           ))}
           {/* EGC logo centered at the bottom on mobile */}
           <div className="col-span-2 sm:col-span-3 flex justify-center pt-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={partnerLogos[6].src}
               alt={partnerLogos[6].alt}
-              className="h-[36px] sm:h-[42px] object-contain dark:opacity-100 opacity-70 grayscale dark:brightness-0 dark:invert"
-              style={{ width: partnerLogos[6].width }}
+              width={partnerLogos[6].width}
+              height={42}
+              unoptimized
+              className="h-[36px] sm:h-[42px] w-auto object-contain dark:opacity-100 opacity-70 grayscale dark:brightness-0 dark:invert"
             />
           </div>
         </div>
 
         {/* Desktop Marquee Layout */}
-        <div className="max-md:!hidden md:block marquee-track">
+        <div className="max-md:hidden! md:block marquee-track">
           {marqueeLogos.map((logo, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-[47px] object-contain mx-6 md:mx-[100px] shrink-0 dark:opacity-100 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 dark:brightness-0 dark:invert transition-all duration-300"
-              style={{ width: logo.width }}
+              width={logo.width}
+              height={47}
+              unoptimized
+              className="h-[47px] w-auto object-contain mx-6 md:mx-[100px] shrink-0 dark:opacity-100 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 dark:brightness-0 dark:invert transition-all duration-300"
             />
           ))}
         </div>

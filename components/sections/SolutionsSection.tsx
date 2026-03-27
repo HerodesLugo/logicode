@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { SOLUTIONS_GARBO_LOGO } from "@/lib/assets";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
@@ -58,10 +59,12 @@ export function SolutionsSection() {
               >
                 {/* Logo area */}
                 <div className="p-10 flex items-center justify-center min-h-[160px]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={sol.logo}
                     alt="Garbo Logo"
+                    width={169}
+                    height={56}
+                    unoptimized
                     className="h-[56px] w-auto object-contain dark:brightness-0 dark:invert transition-all duration-300"
                   />
                 </div>

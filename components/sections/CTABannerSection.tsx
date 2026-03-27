@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CTA_BG_IMG } from "@/lib/assets";
 
 const bgImage = CTA_BG_IMG;
@@ -8,11 +9,13 @@ export function CTABannerSection() {
       <div className="section-container">
         <div className="relative rounded-[25px] overflow-hidden min-h-[309px] max-md:h-[617px] max-md:p-5">
           {/* ── Background image + overlay ──────────────── */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={bgImage}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+            fill
+            unoptimized
+            sizes="(max-width: 1440px) 100vw, 1440px"
+            className="object-cover pointer-events-none"
           />
           <div className="absolute inset-0 bg-[rgba(49,70,73,0.22)]" />
 
