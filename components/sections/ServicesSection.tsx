@@ -13,24 +13,15 @@ type SvgIconProps = ComponentProps<"svg">;
 
 const services: {
   name: string;
-  darkIcon: ComponentType<SvgIconProps>;
-  LightIcon: ComponentType<SvgIconProps>;
+  Icon: ComponentType<SvgIconProps>;
 }[] = [
-  { name: "Incidents", darkIcon: IncidentsIcon, LightIcon: IncidentsIcon },
-  {
-    name: "Notices\nand Alerts",
-    darkIcon: NoticesIcon,
-    LightIcon: NoticesIcon,
-  },
-  { name: "Solutions", darkIcon: SolutionsIcon, LightIcon: SolutionsIcon },
-  { name: "Reports", darkIcon: ReportsIcon, LightIcon: ReportsIcon },
-  { name: "Guides", darkIcon: GuidesIcon, LightIcon: GuidesIcon },
-  {
-    name: "National SOC\nNetwork",
-    darkIcon: NationalSocIcon,
-    LightIcon: NationalSocIcon,
-  },
-  { name: "Training", darkIcon: TrainingIcon, LightIcon: TrainingIcon },
+  { name: "Incidents", Icon: IncidentsIcon },
+  { name: "Notices\nand Alerts", Icon: NoticesIcon },
+  { name: "Solutions", Icon: SolutionsIcon },
+  { name: "Reports", Icon: ReportsIcon },
+  { name: "Guides", Icon: GuidesIcon },
+  { name: "National SOC\nNetwork", Icon: NationalSocIcon },
+  { name: "Training", Icon: TrainingIcon },
 ];
 
 export function ServicesSection() {
@@ -41,13 +32,9 @@ export function ServicesSection() {
           {services.map((svc) => (
             <button
               key={svc.name}
-              className="snap-center shrink-0 w-[150px] sm:w-auto bg-card-bg dark:bg-[linear-gradient(221deg,#263f64_8%,#0d1521_92%)] rounded-[20px] p-6 lg:p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
+              className="snap-center shrink-0 w-[150px] sm:w-auto bg-card-bg dark:bg-[linear-gradient(221deg,#263f64_8%,#0d1521_92%)] rounded-[20px] p-6 lg:p-7 flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow cursor-pointer group"
             >
-              {/* Light mode: icon component */}
-              <svc.LightIcon className="w-[70px] h-[70px] text-brand dark:hidden" />
-              {/* Dark mode: Figma asset icon */}
-              <svc.LightIcon className="w-[70px] h-[70px] text-brand dark:hidden" />
-              <svc.darkIcon className="hidden dark:block w-[70px] h-[70px] object-contain" />
+              <svc.Icon className="w-[70px] h-[70px] text-brand dark:text-green-400 transition-colors" />
 
               <span className="text-heading text-sm text-center whitespace-pre-line leading-tight">
                 {svc.name}
