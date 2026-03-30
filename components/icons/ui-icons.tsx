@@ -116,13 +116,20 @@ export function SearchIcon(props: IconProps) {
 
 export function UserIcon(props: IconProps) {
   return (
-    <svg viewBox="0 0 16 16" fill="none" {...props}>
-      <circle cx="8" cy="5" r="3" stroke="currentColor" strokeWidth="1.5" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      {...props}
+    >
       <path
-        d="M2 14c0-3.314 2.686-6 6-6s6 2.686 6 6"
+        d="M13.5995 14.4003L13.5997 12.0005C13.5998 10.6749 12.5253 9.60026 11.1997 9.60026H4.80017C3.47479 9.60026 2.40032 10.6746 2.40017 12L2.3999 14.4003M10.3999 4.00026C10.3999 5.32574 9.32539 6.40026 7.9999 6.40026C6.67442 6.40026 5.5999 5.32574 5.5999 4.00026C5.5999 2.67478 6.67442 1.60026 7.9999 1.60026C9.32539 1.60026 10.3999 2.67478 10.3999 4.00026Z"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="1.33333"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

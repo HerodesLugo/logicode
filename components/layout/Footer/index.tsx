@@ -39,7 +39,7 @@ export function Footer() {
         {/* ── Bottom bar ── */}
         <div className="border-t border-footer-border pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <span className="text-footer-link text-sm">
-            © 2025 Logicode Technologies, Inc. All rights reserved.
+            © {new Date().getFullYear()} Logicode Technologies, Inc. All rights reserved.
           </span>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 w-full sm:w-auto">
