@@ -1,7 +1,7 @@
 import type { BadgeVariant } from "./types";
 
 export const variantClasses: Record<BadgeVariant, string> = {
-  "green":         "bg-tag-bg text-tag-text",
+  "green":         "bg-tag-bg text-tag-text dark:text-white",
   "mint":          "bg-brand-mint text-tag-text",
   "brand-outline": "bg-tag-bg border border-accent/20 text-accent",
 };

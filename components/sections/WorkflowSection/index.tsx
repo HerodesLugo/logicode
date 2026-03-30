@@ -32,13 +32,13 @@ export function WorkflowSection() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-8">
+            <div className="flex h-full justify-between flex-col gap-8">
               {steps.map((step) => (
                 <div
                   key={step.number}
                   className="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-[18px]"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-[14px] md:rounded-[20px] bg-tag-bg flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-[14px] md:rounded-[20px] dark:bg-tag-bg bg-[rgba(40,_240,_106,_0.10)] flex items-center justify-center">
                     <span className="text-accent text-xl md:text-2xl font-normal">
                       {step.number}
                     </span>
