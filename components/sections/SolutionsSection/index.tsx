@@ -45,7 +45,7 @@ export function SolutionsSection() {
                     width={169}
                     height={56}
                     unoptimized
-                    className="h-[56px] w-[20.625rem] object-contain dark:brightness-0 dark:invert transition-all duration-300"
+                    className="h-[56px] w-[20.625rem] object-contain shrink-0 dark:brightness-0 dark:invert transition-all duration-300"
                   />
                 </div>
                 {/* Description */}
