@@ -42,7 +42,7 @@ export function HeroSection() {
             fill
             unoptimized
             sizes="(max-width: 1024px) 100vw, 70vw"
-            className={`object-cover transition-opacity duration-1000 ease-in-out ${
+            className={`object-cover transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
               i === active
                 ? "opacity-40 md:opacity-80 lg:opacity-100"
                 : "opacity-0"

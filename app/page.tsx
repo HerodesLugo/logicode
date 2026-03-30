@@ -15,7 +15,7 @@ import { FadeUp } from "@/components/ui/FadeUp";
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main className="flex flex-col flex-1 overflow-hidden">
         <HeroSection />
         <FadeUp>
