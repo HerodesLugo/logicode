@@ -6,14 +6,13 @@ import {
   SearchIcon,
   UserIcon,
   ArrowRightIcon,
-  LanguageGlobeIcon,
-  ChevronDownIcon,
   MenuIcon,
 } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageModal } from "./LanguageModal";
+import { LanguageDropdown } from "./LanguageDropdown";
 import { navLinks } from "./data";
 
 export function Header() {
@@ -48,14 +47,7 @@ export function Header() {
                 Request Demo
               </Button>
 
-              <button
-                onClick={() => setIsLanguageModalOpen(true)}
-                className="hidden lg:flex items-center gap-2 bg-btn-dark text-white px-6 py-4 rounded-[20px] text-sm font-medium hover:opacity-90 transition-colors"
-              >
-                <LanguageGlobeIcon className="w-4 h-4" />
-                Language
-                <ChevronDownIcon className="w-4 h-4" />
-              </button>
+              <LanguageDropdown />
             </div>
 
             {/* Mobile menu toggle */}
