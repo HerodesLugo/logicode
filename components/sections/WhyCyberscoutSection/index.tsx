@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { cards } from "./data";
 
 export function WhyCyberscoutSection() {
   return (
     <section className="w-full bg-footer-bg py-20 lg:py-[84px] overflow-hidden">
-      <div className="section-container flex flex-col gap-10">
+      <FadeUp>
+        <div className="section-container flex flex-col gap-10">
         {/* ── Section header ── */}
         <div className="flex flex-col gap-4 max-w-[760px]">
           <span className="text-accent text-sm font-medium">Why Logicode</span>
@@ -75,7 +77,8 @@ export function WhyCyberscoutSection() {
             />
           ))}
         </div>
-      </div>
+        </div>
+      </FadeUp>
     </section>
   );
 }

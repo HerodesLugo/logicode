@@ -1,13 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 import { solutions } from "./data";
 
 export function SolutionsSection() {
   return (
     <section className="w-full bg-brand-light-bg py-10 lg:py-14 overflow-hidden">
-      <div className="section-container flex flex-col gap-8">
+      <FadeUp>
+        <div className="section-container flex flex-col gap-8">
         {/* ── Section header ── */}
         <div className="flex flex-col gap-2">
           <span className="text-accent text-sm font-medium">
@@ -64,7 +66,8 @@ export function SolutionsSection() {
             <ChevronRightIcon className="w-8 h-8 text-accent" />
           </button>
         </div>
-      </div>
+        </div>
+      </FadeUp>
     </section>
   );
 }

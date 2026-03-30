@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { CTA_BG_IMG } from "@/lib/assets";
 
 export function CTABannerSection() {
   return (
     <section className="w-full bg-brand-light-bg py-10 lg:py-14">
-      <div className="section-container">
+      <FadeUp>
+        <div className="section-container">
         <div className="relative rounded-[25px] overflow-hidden min-h-[309px] max-md:h-[617px] max-md:p-5">
           {/* Background image */}
           <Image
@@ -47,7 +49,8 @@ export function CTABannerSection() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </FadeUp>
     </section>
   );
 }

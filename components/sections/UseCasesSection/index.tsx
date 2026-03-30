@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { ArrowRightIcon } from "@/components/icons";
 import { useCases } from "./data";
 
@@ -8,7 +9,8 @@ const arrowIcon = <ArrowRightIcon className="w-4 h-4" />;
 export function UseCasesSection() {
   return (
     <section className="w-full bg-brand-light-bg pb-10 lg:pb-14 pt-20 lg:pt-[84px]">
-      <div className="section-container flex flex-col gap-10">
+      <FadeUp>
+        <div className="section-container flex flex-col gap-10">
         {/* ── Section header ── */}
         <div className="flex flex-col gap-4">
           <span className="text-accent text-sm font-medium">Use cases</span>
@@ -49,7 +51,8 @@ export function UseCasesSection() {
             Case Studies
           </Button>
         </div>
-      </div>
+        </div>
+      </FadeUp>
     </section>
   );
 }

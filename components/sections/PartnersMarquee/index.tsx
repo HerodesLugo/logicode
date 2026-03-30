@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { partnerLogos } from "./data";
 
-export function PartnersMarquee() {
+export function PartnersMarquee({ className = "" }: { className?: string }) {
   /* Duplicate the set 3× so there's always enough content visible */
   const marqueeLogos = [
     ...partnerLogos,
@@ -10,8 +11,9 @@ export function PartnersMarquee() {
   ];
 
   return (
-    <section className="w-full overflow-hidden py-10 md:py-24 bg-brand-light-bg">
-      <div className="section-container">
+    <section className={`w-full overflow-hidden py-10 md:py-24 bg-brand-light-bg ${className}`}>
+      <FadeUp delay={80}>
+        <div className="section-container">
         {/* Mobile — static grid */}
         <div className="grid grid-cols-3 gap-x-8 gap-y-12 items-center justify-items-center md:hidden">
           {partnerLogos.slice(0, 6).map((logo, i) => (
@@ -52,7 +54,8 @@ export function PartnersMarquee() {
             />
           ))}
         </div>
-      </div>
+        </div>
+      </FadeUp>
     </section>
   );
 }

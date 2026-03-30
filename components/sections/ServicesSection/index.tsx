@@ -1,9 +1,11 @@
+import { FadeUp } from "@/components/ui/FadeUp";
 import { services } from "./data";
 
 export function ServicesSection() {
   return (
     <section className="w-full bg-brand-light-bg py-6 lg:py-10">
-      <div className="section-container">
+      <FadeUp>
+        <div className="section-container">
         <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 lg:gap-6 pb-6 pt-2 sm:grid sm:grid-cols-4 lg:grid-cols-7 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-6 px-6 sm:mx-0 sm:px-0">
           {services.map((svc) => (
             <button
@@ -17,7 +19,8 @@ export function ServicesSection() {
             </button>
           ))}
         </div>
-      </div>
+        </div>
+      </FadeUp>
     </section>
   );
 }

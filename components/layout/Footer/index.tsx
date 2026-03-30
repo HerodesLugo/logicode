@@ -1,11 +1,13 @@
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { FooterBrand } from "./FooterBrand";
 import { navColumns, legalLinks } from "./data";
 
 export function Footer() {
   return (
     <footer className="w-full bg-footer-bg border-t border-footer-border">
-      <div className="section-container py-20 flex flex-col gap-20">
+      <FadeUp>
+        <div className="section-container py-20 flex flex-col gap-20">
         {/* ── Main columns ── */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
           <FooterBrand />
@@ -57,7 +59,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </FadeUp>
     </footer>
   );
 }

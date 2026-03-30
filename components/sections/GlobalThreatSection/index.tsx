@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { GLOBE_IMG, GLOBE_IMG_DARK } from "@/lib/assets";
 import { useIsMounted } from "@/lib/hooks/useIsMounted";
 
@@ -32,29 +33,35 @@ export function GlobalThreatSection() {
         </div>
 
         {/* ── Centered text content ── */}
-        <div className="absolute inset-x-0 top-[6%] md:top-[9.8%] z-10 flex flex-col items-center text-center gap-3 lg:gap-[22px] px-6">
-          <span className="text-accent text-sm lg:text-base font-medium">
-            Global Reach
-          </span>
-          <h2 className="text-heading text-[32px] md:text-[28px] lg:text-[44px] font-bold leading-tight max-w-[80%] md:max-w-none">
-            Global cyber threat intelligence.
-          </h2>
-          <p className="text-body text-sm lg:text-base leading-relaxed max-w-[837px]">
-            Continuous monitoring and event correlation across regions, providing
-            real-time support to SOC, DFIR, and intelligence teams operating in
-            distributed environments.
-          </p>
+        <div className="absolute inset-x-0 top-[6%] md:top-[9.8%] z-10 px-6">
+          <FadeUp className="flex flex-col items-center text-center gap-3 lg:gap-[22px]">
+            <span className="text-accent text-sm lg:text-base font-medium">
+              Global Reach
+            </span>
+            <h2 className="text-heading text-[32px] md:text-[28px] lg:text-[44px] font-bold leading-tight max-w-[80%] md:max-w-none">
+              Global cyber threat intelligence.
+            </h2>
+            <p className="text-body text-sm lg:text-base leading-relaxed max-w-[837px]">
+              Continuous monitoring and event correlation across regions, providing
+              real-time support to SOC, DFIR, and intelligence teams operating in
+              distributed environments.
+            </p>
+          </FadeUp>
         </div>
 
         {/* ── Quote ── */}
-        <blockquote
-          className={`absolute z-10 left-6 md:left-[12.3%] bottom-10 md:top-[90.4%] text-sm lg:text-[22px] leading-relaxed max-w-[80%] md:max-w-[55%] ${
-            isDark ? "text-white" : "text-body"
-          }`}
-        >
-          &ldquo;Logicode tools are like a powerful lens, clarifying the
-          cybersecurity landscape.&rdquo;
-        </blockquote>
+        <div className="absolute z-10 left-6 md:left-[12.3%] bottom-10 md:top-[90.4%] max-w-[80%] md:max-w-[55%]">
+          <FadeUp delay={80}>
+            <blockquote
+              className={`text-sm lg:text-[22px] leading-relaxed ${
+                isDark ? "text-white" : "text-body"
+              }`}
+            >
+              &ldquo;Logicode tools are like a powerful lens, clarifying the
+              cybersecurity landscape.&rdquo;
+            </blockquote>
+          </FadeUp>
+        </div>
       </div>
     </section>
   );
