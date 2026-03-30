@@ -116,10 +116,10 @@ export function HeroSection() {
               {slide.primaryBtn}
             </button>
             <button
-              className="w-full sm:w-auto flex-row-reverse px-8 h-14 justify-center items-center gap-2 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90 flex"
+              className="w-full sm:w-auto text-white flex-row-reverse px-8 h-14 justify-center items-center gap-2 rounded-[20px] text-sm font-medium transition-opacity hover:opacity-90 flex"
               style={{
                 backgroundColor: c.secondaryBtnBg,
-                color: c.secondaryBtnColor,
+                // color: c.secondaryBtnColor,
               }}
             >
               {slide.secondaryBtn}
