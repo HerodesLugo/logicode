@@ -24,7 +24,7 @@ export function ThemeToggle() {
       {isDark ? (
         <SunIcon className="w-[18px] h-[18px] text-accent" />
       ) : (
-        <MoonIcon className="w-[18px] h-[18px] text-accent" />
+        <MoonIcon className="w-[18px] h-[18px] text-footer-heading" />
       )}
     </button>
   );

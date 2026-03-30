@@ -39,7 +39,7 @@ export function FooterBrand() {
             aria-label={label}
             className="w-10 h-10 rounded-md flex items-center justify-center bg-footer-social-bg border border-footer-social-bdr hover:opacity-80 transition-colors"
           >
-            <Icon className="w-5 h-5 text-accent dark:text-footer-link" />
+            <Icon className="w-5 h-5 text-footer-heading dark:text-footer-link" />
           </a>
         ))}
       </div>
