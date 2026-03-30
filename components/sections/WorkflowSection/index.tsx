@@ -3,7 +3,7 @@ import { steps, metrics } from "./data";
 
 export function WorkflowSection() {
   return (
-    <section className="w-full bg-brand-light-bg py-20 lg:py-[84px]">
+    <section className="w-full bg-brand-light-bg lg:py-[84px]">
       <FadeUp>
         <div className="section-container flex flex-col gap-10">
         {/* ── Section header ── */}
@@ -40,7 +40,7 @@ export function WorkflowSection() {
                   key={step.number}
                   className="grid grid-cols-[48px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-[18px]"
                 >
-                  <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-[14px] md:rounded-[20px] dark:bg-tag-bg bg-[rgba(40,_240,_106,_0.10)] flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-l-none rounded-[8px] md:rounded-[20px] dark:bg-tag-bg bg-[rgba(40,_240,_106,_0.10)] flex items-center justify-center">
                     <span className="text-accent text-xl md:text-2xl font-normal">
                       {step.number}
                     </span>
@@ -56,7 +56,9 @@ export function WorkflowSection() {
                 </div>
               ))}
             </div>
+            
           </div>
+
 
           {/* Right card: metrics */}
           <div className="bg-card-bg rounded-[20px] p-6 md:p-8 flex flex-col justify-between gap-8">
@@ -74,10 +76,10 @@ export function WorkflowSection() {
             <div className="flex flex-col gap-8">
               {metrics.map((metric) => (
                 <div key={metric.value} className="flex flex-col gap-1">
-                  <span className="text-accent text-5xl font-normal leading-none">
+                  <span className="text-accent text-5xl max-md:text-3xl font-normal leading-none">
                     {metric.value}
                   </span>
-                  <span className="font-display font-semibold text-sm text-heading mt-2">
+                  <span className="font-display font-semibold text-sm  mt-2 text-heading">
                     {metric.label}
                   </span>
                   <p className="text-body text-xs leading-relaxed max-w-[520px]">

@@ -5,7 +5,7 @@ import { navColumns, legalLinks } from "./data";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-footer-bg border-t border-footer-border">
+    <footer className="w-full bg-brand-light-bg md:bg-footer-bg dark:border-t md:border-t border-footer-border">
       <FadeUp>
         <div className="section-container py-20 flex flex-col gap-20">
         {/* ── Main columns ── */}

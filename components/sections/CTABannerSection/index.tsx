@@ -4,7 +4,7 @@ import { CTA_BG_IMG } from "@/lib/assets";
 
 export function CTABannerSection() {
   return (
-    <section className="w-full bg-brand-light-bg py-10 lg:py-14">
+    <section className="w-full bg-brand-light-bg pt-10 lg:py-14">
       <FadeUp>
         <div className="section-container">
         <div className="relative rounded-[25px] overflow-hidden min-h-[309px] max-md:h-[617px] max-md:p-5">
