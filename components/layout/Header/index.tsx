@@ -13,7 +13,7 @@ import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageModal } from "./LanguageModal";
 import { LanguageDropdown } from "./LanguageDropdown";
-import { navLinks } from "./data";
+import { DesktopNav } from "./DesktopNav";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -62,22 +62,8 @@ export function Header() {
         </div>
 
         {/* ── Desktop nav bar ── */}
-        <nav className="hidden md:block bg-header-nav-bg">
-          <div className="section-container">
-            <ul className="flex items-center justify-center gap-9 h-[62px]">
-              {navLinks.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="text-nav-link text-sm font-medium hover:text-heading transition-colors"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
+        <DesktopNav />
+        
       </header>
 
       {isMobileMenuOpen && (
